@@ -188,7 +188,6 @@ hide: true
 
 </script>
 
-My journey starts here.
 
 ### Markdown samples [ [markdown cheatsheet] ](https://www.markdownguide.org/getting-started/)
 Using Markdown form index.md. We are learning Markdown.
