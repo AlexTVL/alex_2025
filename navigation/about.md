@@ -35,10 +35,10 @@ permalink: /about/
     // 2. Define a JavaScript object for our http source and our data rows for the Living in the World grid
     var http_source = "https://upload.wikimedia.org/wikipedia/commons/";
     var living_in_the_world = [
-        {"flag": "0/01/Flag_of_California.svg", "greeting": "Hey", "description": "California - The Greatest State"},
-        {"flag": "b/ba/Flag_of_Germany.svg", "greeting": "Hallo", "description": "Germany - Ancestors From Both Sides"},
-        {"flag": "2/20/Flag_of_the_Netherlands.svg", "greeting": "Hallo", "description": "Netherlands - Great-Grandfather Came From Here"},
-        {"flag": "f/fc/Flag_of_Mexico.svg", "greeting": "Hola", "description": "Mexico - Another Great-Grandfather Came From Here"},
+        {"flag": "0/01/Flag_of_California.svg", "greeting": "Greeting - Hey", "description": "California - The Greatest State"},
+        {"flag": "b/ba/Flag_of_Germany.svg", "greeting": "Greeting - Hallo", "description": "Germany - Ancestors From Both Sides"},
+        {"flag": "2/20/Flag_of_the_Netherlands.svg", "greeting": "Greeting - Hallo", "description": "Netherlands - Great-Grandfather Came From Here"},
+        {"flag": "f/fc/Flag_of_Mexico.svg", "greeting": "Greeting - Hola", "description": "Mexico - Another Great-Grandfather Came From Here"},
     ]; 
     
     // 3a. Consider how to update style count for size of container
@@ -71,4 +71,3 @@ permalink: /about/
         container.appendChild(gridItem);
     }
 </script>
-Creator of Student 2025
