@@ -3,6 +3,14 @@ layout: page
 title: About
 permalink: /about/
 ---
+### CLASS OF 2028!!!!
+
+## Here are some flags that represent my background
+
+<comment>
+Flags found on Wikimedia Commons
+</comment>
+
 <style>
     /* Style looks pretty compact, trace grid-container and grid-item in the code */
     .grid-container {
@@ -71,3 +79,16 @@ permalink: /about/
         container.appendChild(gridItem);
     }
 </script>
+
+### Schools I Have Been To 
+    - Monterey Ridge Elementary School 2016-2021
+    - Oak Valley Middle School 2021 - 2024
+    - Del Norte High School 2024 -
+
+### My Life
+    - Born at Scripps Mercy Hospital on 8/18/2009
+    - Lived in La Mesa for several years before moving to Poway 
+    - Moved to 4S Ranch in 2014 and have been there ever since!
+
+## My Family 
+    
