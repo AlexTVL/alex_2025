@@ -81,7 +81,9 @@ Flags found on Wikimedia Commons
 
 ## Schools I Have Been To 
 
+
 Here are all of the schools I have been to so far 
+
 
  - Monterey Ridge Elementary School 2016-2021
  - Oak Valley Middle School 2021 - 2024
@@ -89,7 +91,9 @@ Here are all of the schools I have been to so far
 
 ## My Life
 
+
 Here are some details about my life
+
 
  - Born at Scripps Mercy Hospital on 8/18/2009
  - Lived in La Mesa for several years before moving to Poway 
@@ -97,23 +101,25 @@ Here are some details about my life
 
 ### My Family
 
+
 Here are some details about my family
+
 
  - I have two siblings, an older brother and sister
  - My brother recently graduated from college and my sister is going into her final year at college
  - I also have two very adorable cats named Squash and Basil who we have had since 2019
 
-### My Interests
+### Things I Love
 
-    Here is a image gallery that reflects some of my favorite things!
+<comment>
+Here is an image gallery of some of the things I love!
+</comment>
 
 <div class="image-gallery">
-  <img src="{{site.baseurl}}/images/about/missionary.jpg" alt="Image 1">
-  <img src="{{site.baseurl}}/images/about/john_tamara.jpg" alt="Image 2">
-  <img src="{{site.baseurl}}/images/about/tamara_fam.jpg" alt="Image 3">
-  <img src="{{site.baseurl}}/images/about/surf.jpg" alt="Image 4">
-  <img src="{{site.baseurl}}/images/about/john_lora.jpg" alt="Image 5">
-  <img src="{{site.baseurl}}/images/about/lora_fam.jpg" alt="Image 6">
-  <img src="{{site.baseurl}}/images/about/lora_fam2.jpg" alt="Image 7">
-  <img src="{{site.baseurl}}/images/about/pj_party.jpg" alt="Image 8">
+  <img src="{{site.baseurl}}" alt="Image 1">
+  <img src="{{site.baseurl}}" alt="Image 2">
+  <img src="{{site.baseurl}}" alt="Image 3">
+  <img src="{{site.baseurl}}" alt="Image 4">
+  <img src="{{site.baseurl}}" alt="Image 5">
+  <img src="{{site.baseurl}}" alt="Image 6">
 </div>    
