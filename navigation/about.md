@@ -116,10 +116,10 @@ Here is an image gallery of some of the things I love!
 </comment>
 
 <div class="image-gallery">
-  <img src="{{site.baseurl}}" alt="Image 1">
-  <img src="{{site.baseurl}}" alt="Image 2">
-  <img src="{{site.baseurl}}" alt="Image 3">
-  <img src="{{site.baseurl}}" alt="Image 4">
-  <img src="{{site.baseurl}}" alt="Image 5">
-  <img src="{{site.baseurl}}" alt="Image 6">
+  <img src="{{site.baseurl}}/images/about/book.jpg" alt="Image 1">
+  <img src="{{site.baseurl}}/images/about/movieTheater.jpg" alt="Image 2">
+  <img src="{{site.baseurl}}/images/about/gameOfThrones.jpg" alt="Image 3">
+  <img src="{{site.baseurl}}/images/about/darkSouls.png" alt="Image 4">
+  <img src="{{site.baseurl}}/images/about/delicious.jpg" alt="Image 5">
+  <img src="{{site.baseurl}}/images/about/friends.jpg" alt="Image 6">
 </div>    
