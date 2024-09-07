@@ -81,21 +81,21 @@ Flags found on Wikimedia Commons
 
 ## Schools I Have Been To 
 
-    - Monterey Ridge Elementary School 2016-2021
-    - Oak Valley Middle School 2021 - 2024
-    - Del Norte High School 2024 -
+     Monterey Ridge Elementary School 2016-2021
+     Oak Valley Middle School 2021 - 2024
+     Del Norte High School 2024 -
 
 ## My Life
 
-    - Born at Scripps Mercy Hospital on 8/18/2009
-    - Lived in La Mesa for several years before moving to Poway 
-    - Moved to 4S Ranch in 2014 and have been there ever since!
+    Born at Scripps Mercy Hospital on 8/18/2009
+    Lived in La Mesa for several years before moving to Poway 
+    Moved to 4S Ranch in 2014 and have been there ever since!
 
 ### My Family
 
-    - I have two siblings, an older brother and sister
-    - My brother recently graduated from college and my sister is going into her final year at college
-    - I also have two very adorable cats named Squash and Basil who we have had since 2019
+    I have two siblings, an older brother and sister
+    My brother recently graduated from college and my sister is going into her final year at college
+    I also have two very adorable cats named Squash and Basil who we have had since 2019
 
 ### My Interests
     Here is a image gallery that reflects some of my favorite things!
