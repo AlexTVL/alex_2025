@@ -21,12 +21,25 @@ Flags found on Wikimedia Commons
         text-align: center;
     }
     .grid-item img {
-        width: 50%;
-        height: 50px; /* Fixed height for uniformity */
+        width: 100%;
+        height: 100px; /* Fixed height for uniformity */
         object-fit: contain; /* Ensure the image fits within the fixed height */
     }
     .grid-item p {
         margin: 5px 0; /* Add some margin for spacing */
+    }
+
+     .image-gallery {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 10px;
+        }
+
+    .image-gallery img {
+        max-height: 150px;
+        object-fit: cover;
+        border-radius: 5px;
     }
 </style>
 
