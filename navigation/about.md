@@ -129,7 +129,7 @@ Here is an image gallery of some of the things I love!
 </comment>
 
 <div class="image-gallery">
-  <img src="{{site.baseurl}}/images/about/book.jpg" alt="Image 1">
+  <img src="{{site.baseurl}}/images/about/fahrenheit.jpg" alt="Image 1">
   <img src="{{site.baseurl}}/images/about/theWire.jpg" alt="Image 2">
   <img src="{{site.baseurl}}/images/about/darkSouls.png" alt="Image 3">
   <img src="{{site.baseurl}}/images/about/delicious.jpg" alt="Image 4">
