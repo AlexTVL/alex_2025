@@ -134,4 +134,13 @@ Here is an image gallery of some of the things I love!
   <img src="{{site.baseurl}}/images/about/darkSouls.png" alt="Image 3">
   <img src="{{site.baseurl}}/images/about/delicious.jpg" alt="Image 4">
   <img src="{{site.baseurl}}/images/about/friends.jpg" alt="Image 5">
-</div>    
+</div> 
+
+<script src="https://utteranc.es/client.js"
+        repo="alex_2025"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
