@@ -135,3 +135,12 @@ Here is an image gallery of some of the things I love!
   <img src="{{site.baseurl}}/images/about/delicious.jpg" alt="Image 4">
   <img src="{{site.baseurl}}/images/about/friends.jpg" alt="Image 5">
 </div>    
+
+<script src="https://utteranc.es/client.js"
+        repo="[ENTER REPO HERE]"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+</script>
