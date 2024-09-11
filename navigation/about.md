@@ -143,4 +143,4 @@ Here is an image gallery of some of the things I love!
         crossorigin="anonymous"
         async>
 </script>
-</script>
+
