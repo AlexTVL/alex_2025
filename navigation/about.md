@@ -137,7 +137,7 @@ Here is an image gallery of some of the things I love!
 </div> 
 
 <script src="https://utteranc.es/client.js"
-        repo="alex_2025"
+        repo="AlexTVL/alex_2025"
         issue-term="title"
         label="blogpost-comment"
         theme="github-light"
