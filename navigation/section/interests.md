@@ -4,6 +4,8 @@ title: Interests
 permalink: /interests/
 ---
 
+{% include nav/home.html %}
+
 ### My Interests - Predicting the Future in Video Games: Metal Gear Solid 2
 
 (The story for these games is quite complex, so here is an [article](https://www.svg.com/147452/the-entire-metal-gear-timeline-explained/) that sums up things pretty well.)
