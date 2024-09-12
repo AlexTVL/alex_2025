@@ -17,3 +17,11 @@ Although I wish I could go into depth about every detail of this masterpiece of 
 
 ![codec call](https://github.com/AlexTVL/alex_2025/blob/main/navigation/section/codecCall.png?raw=true)
 
+
+Probably the most accurate and relevant prediction made by Metal Gear Solid 2 was just how easy it is for public opinion to be warped and influenced by social media in the current digital age. The way that Metal Gear Solid 2 (or MGS2 for short) explored this topic was in two distinct ways: Echo Chambers and Fake News.
+
+### Echo Chambers
+
+
+### Fake News 
+
