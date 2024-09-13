@@ -23,7 +23,12 @@ Although I wish I could go into depth about every detail of this masterpiece of 
 Probably the most accurate and relevant prediction made by Metal Gear Solid 2 was just how easy it is for public opinion to be warped and influenced by social media in the current digital age. The way that Metal Gear Solid 2 (or MGS2 for short) explored this topic was in two distinct ways: Echo Chambers and Fake News.
 
 ### Echo Chambers
+"Everyone withdraws into their own small gated community, afraid of a larger forum.
+They stay inside their little ponds leaking whatever "truth" suits them into the growing cesspool of society at large. The different cardinal truths neither clash nor mesh. No one is invalidated, but nobody is right" 
 
+This quote, coming from the end of the game in one of the most famous speeches in gaming, predicted a pretty recent concept in social media known as echo chambers. Echo chambers are defined as, "an environment or ecosystem in which participants encounter beliefs that amplify or reinforce their preexisting beliefs by communication and repetition inside a closed system and insulated from rebuttal." Echo chambers do nothing but surround social media users with things that will please and agree with them, detaching them from the world as a whole, and as a result a new wave of ignorance and intolerance has overtaken all manners of discourse online and even in the real world.
 
 ### Fake News 
+"But in the current, digitized world, trivial information is accumulating every second, preserved in all its triteness. Never fading, always accessible. Rumors about petty issues, misinterpretations, slander...All this junk data preserved in an unfiltered state, growing at an alarming rate."
 
+Continuing on with how easily public opinion can be manipulated, MGS2 also managed to predict that in the modern era of digital information, the line between truth and lies has been blurred to a point where there is no distinction, and people are all too willing to eat it up regardless. This quote 
