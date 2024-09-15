@@ -42,6 +42,7 @@ Metal Gear Solid 2 didn't just predict what would happen a decade in the future,
 ## The Rise of A.I. 
 
 ![patriots](https://github.com/AlexTVL/alex_2025/blob/main/navigation/section/patriots.jpg?raw=true)
+
 (Context: This picture is of the believed heads of the Patriots, the organization that secretly controls America. It is revealed at the end of the game that they have all been dead for over a century, and that the Patriots are actually a network of A.I, with their creation and creators being explored in later games.)
 
 Ok I lied, social media wasn't the most important prediction made by MGS2, it was A.I. A.I has in the past few years experienced a renaissance like no other, and while this unprecedented wave of technological advancement is indeed impressive, the danger of A.I and the damage that it could cause is one thing that has been concerning experts, and MGS2 showed these consequences in superbly well-written form.
