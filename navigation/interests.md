@@ -1,11 +1,9 @@
 ---
-layout: page
+layout: post
 title: Interests
 course: interests 
 menu: nav/home.html
 ---
-
-{% include nav/home.html %}
 
 ### My Interests - Predicting the Future in Video Games: Metal Gear Solid 2
 
