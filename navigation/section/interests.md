@@ -1,7 +1,8 @@
 ---
 layout: page
 title: Interests
-permalink: /interests/
+course: interests 
+menu: nav/home.html
 ---
 
 {% include nav/home.html %}
