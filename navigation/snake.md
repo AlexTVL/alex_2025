@@ -3,6 +3,7 @@ layout: post
 title: Snake 
 course: snake
 menu: nav/home.html
+permalink: /snake/
 ---
 
 <style>
