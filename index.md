@@ -220,3 +220,12 @@ Funny
 ![image](https://github.com/user-attachments/assets/4af320b9-76cb-4f03-9579-312429fe32eb)
 
 VSCode test
+
+<script src="https://utteranc.es/client.js"
+        repo="AlexTVL/alex_2025"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
