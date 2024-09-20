@@ -1,7 +1,8 @@
 ---
-layout: page
+layout: post
 title: Snake 
-permalink: /snake/
+course: snake
+menu: nav/home.html
 ---
 
 <style>
