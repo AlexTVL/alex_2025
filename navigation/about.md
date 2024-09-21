@@ -134,6 +134,7 @@ Here is an image gallery of some of the things I love!
   <img src="{{site.baseurl}}/images/about/darkSouls.png" alt="Image 3">
   <img src="{{site.baseurl}}/images/about/delicious.jpg" alt="Image 4">
   <img src="{{site.baseurl}}/images/about/friends.jpg" alt="Image 5">
+  <img src="{{site.baseurl}}/images/about/gameOfThrones.jpg" alt="Image 6">
 </div> 
 
 <script src="https://utteranc.es/client.js"
