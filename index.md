@@ -238,45 +238,6 @@ Frontend Development Hacks: Dead Cells Theme
   <p style="border: 4px solid red; font-size: 1.5em; padding: 10px;">The real best weapons!</p>
 </div>
 
-// Creating an object representing myself
-const person = {
-    name: "Alex Van Linge",
-    age: 15,
-    currentClasses: ["Math", "Biology", "Computer Science"],
-    interests: ["Gaming", "Watching Movies", "Reading"],
-    favoriteNumbers: [8, 18, 9],
-    pets: [
-        { type: "Cat", name: "Squash" },
-        { type: "Cat", name: "Basil" }
-    ]
-};
-
-// Print the entire object
-console.log("Initial person object:", person);
-
-// Manipulate the arrays within the object
-person.currentClasses.push("Art");
-person.interests.pop(); // Removing the last interest
-
-// Print the entire object after manipulation
-console.log("Updated person object:", person);
-console.log("Updated current classes:", person.currentClasses);
-console.log("Updated interests:", person.interests);
-
-// Perform mathematical operations
-const ageInMonths = person.age * 12;
-const favoriteSum = person.favoriteNumbers.reduce((sum, num) => sum + num, 0);
-const averageFavoriteNumber = favoriteSum / person.favoriteNumbers.length;
-
-// Print the results
-console.log(`Age in months: ${ageInMonths} (calculated as ${person.age} * 12)`);
-console.log(`Sum of favorite numbers: ${favoriteSum} (calculated as ${person.favoriteNumbers.join(' + ')})`);
-console.log(`Average favorite number: ${averageFavoriteNumber} (calculated as ${favoriteSum} / ${person.favoriteNumbers.length})`);
-
-// Use typeof to determine the types of at least 3 fields
-console.log(`Type of name: ${typeof person.name}`);
-console.log(`Type of age: ${typeof person.age}`);
-console.log(`Type of currentClasses: ${typeof person.currentClasses}`);
 
 
 <script src="https://utteranc.es/client.js"
