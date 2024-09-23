@@ -4,7 +4,7 @@ layout: post
 description: A Binary Math illustrative application using HTML, Liquid, and JavaScript.
 categories: [Javascript]
 permalink: /javascript/project/binary-calculator
-menu: nav/javascript_project.html
+menu: nav/home.html
 toc: true
 comments: false
 ---
