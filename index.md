@@ -221,6 +221,23 @@ Funny
 
 VSCode test
 
+
+Frontend Development Hacks: Dead Cells Theme
+
+<div style="border: 4px solid blue; padding: 20px;">
+  <p style="border: 4px solid red; font-size: 1.5em; padding: 10px;">Rapier</p>
+  <button style="border: 4px solid green; font-size: 1.5em; padding: 10px;">Pretty Good Weapon! But....</button>
+</div>
+
+<br>
+<br>
+
+<div style="border: 4px solid white; padding: 20px;">
+  <a style="border: 4px solid blue; font-size: 1.5em; padding: 10px; display: block; width: 25%" href="https://deadcells.fandom.com/wiki/Vorpan">Pan</a>
+  <a style="border: 4px solid blue; font-size: 1.5em; padding: 10px; display: block; width: 25%" href="https://deadcells.fandom.com/wiki/Panchaku">More Pan</a>
+  <p style="border: 4px solid red; font-size: 1.5em; padding: 10px;">The real best weapons!</p>
+</div>
+
 <script src="https://utteranc.es/client.js"
         repo="AlexTVL/alex_2025"
         issue-term="title"
