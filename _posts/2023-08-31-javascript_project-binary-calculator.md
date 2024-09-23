@@ -3,8 +3,8 @@ title: Binary Calculator
 layout: post
 description: A Binary Math illustrative application using HTML, Liquid, and JavaScript.
 categories: [Javascript]
-# permalink: /javascript/project/binary-calculator
-menu: nav/home.html
+permalink: /javascript/project/binary-calculator
+menu: nav/javascript_project.html
 toc: true
 comments: false
 ---
