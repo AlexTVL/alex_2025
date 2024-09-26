@@ -41,3 +41,4 @@ https://github.com/AlexTVL/alex_2025/issues/8
 
 ## Here is my personalized RPG!
 
+![alt text](<Screenshot 2024-09-25 201227.png>)
