@@ -19,7 +19,7 @@ permalink: /rpg/
     // Sprite data
     const sprite_src = "{{site.baseurl}}/images/rpg/finalMario.png";
     const sprite_data = {
-        SCALE_FACTOR: 5,
+        SCALE_FACTOR: 10,
         STEP_FACTOR: 1000,
         ANIMATION_RATE: 50,
         pixels: {height: 284, width: 256},
