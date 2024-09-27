@@ -17,17 +17,17 @@ permalink: /rpg/
     const image = {src: image_src, data: image_data};
 
     // Sprite data
-    const sprite_src = "{{site.baseurl}}/images/rpg/finalMario.png";
+    const sprite_src = "{{site.baseurl}}/images/rpg/link.png";
     const sprite_data = {
         SCALE_FACTOR: 10,
         STEP_FACTOR: 2000,
         ANIMATION_RATE: 50,
-        pixels: {height: 304, width: 276},
-        orientation: {rows: 4, columns: 6 },
-        down: {row: 2, start: 0, columns: 4 },
-        left: {row: 3, start: 0, columns: 4 },
-        right: {row: 1, start: 0, columns: 4 },
-        up: {row: 0, start: 0, columns: 4 },
+        pixels: {height: 347, width: 145},
+        orientation: {rows: 0, columns: 4 },
+        down: {row: 0, start: 0, columns: 3 },
+        left: {row: 0, start: 0, columns: 2 },
+        right: {row: 0, start: 0, columns: 4 },
+        up: {row: 0, start: 0, columns: 1 },
     };
     const sprite = {src: sprite_src, data: sprite_data};
 
