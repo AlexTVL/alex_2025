@@ -22,7 +22,7 @@ permalink: /rpg/
         SCALE_FACTOR: 10,
         STEP_FACTOR: 2000,
         ANIMATION_RATE: 50,
-        pixels: {height: 284, width: 256},
+        pixels: {height: 304, width: 276},
         orientation: {rows: 4, columns: 6 },
         down: {row: 2, start: 0, columns: 4 },
         left: {row: 3, start: 0, columns: 4 },
