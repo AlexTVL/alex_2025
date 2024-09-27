@@ -238,7 +238,27 @@ Frontend Development Hacks: Dead Cells Theme
   <p style="border: 4px solid red; font-size: 1.5em; padding: 10px;">The real best weapons!</p>
 </div>
 
+# My Projects 
 
+Here are some things that I am very proud about!
+
+## Snake Game
+
+Took a little bit of debugging, but getting the game to properly work was nothing short of satisfying.
+
+![alt text](<Screenshot 2024-09-26 190841.png>)
+
+## My Interests Page 
+
+Probably the thing I am the most proud of with all the time I put into it, and it surely paid off
+
+![alt text](<Screenshot 2024-09-26 191318.png>)
+
+## My RPG
+
+Have had some issues with the sprites, but was able to change the background, and the sprite at least faces the direction it is going!
+
+![alt text](<Screenshot 2024-09-26 191507.png>)
 
 <script src="https://utteranc.es/client.js"
         repo="AlexTVL/alex_2025"
