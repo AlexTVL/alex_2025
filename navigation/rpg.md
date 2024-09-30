@@ -27,7 +27,7 @@ permalink: /rpg/
         down: {row: 0, start: 0, columns: 1 },
         left: {row: 1, start: 0, columns: 1 },
         right: {row: 2, start: 0, columns: 1 },
-        up: {row: 3, start: 0, columns:  },
+        up: {row: 3, start: 0, columns: 1 },
     };
     const sprite = {src: sprite_src, data: sprite_data};
 
