@@ -61,17 +61,15 @@ Here are some of my ideas for my RPG game!
   <img src="{{site.baseurl}}/images/rpg/graphics.jpg" alt="Image 5">
   <img src="{{site.baseurl}}/images/rpg/solaire.png" alt="Image 6">
 </div> 
-
-
-
+<br>
+<br>
 ### Link to my Issues
 https://github.com/AlexTVL/alex_2025/issues
-
-
-
+<br>
+<br>
 ### My Soft Skills 
 
-Tech Growth - I think Tech growth is the most important part of learning how to accomplish my ideas, and it is something that I am developing every day with each mistake and success that I make.
+Tech Growth - I think Tech Growth is the most important part of learning how to accomplish my ideas, and it is something that I am developing every day with each mistake and success that I make.
 
 Tech Sense - Also very important if I wish to achieve my goals, as having a greater sense of how things function and interact will help me a lot.
 
@@ -79,5 +77,5 @@ Comm & Collab - Being able to communicate and collaborate with my peers is instr
 
 Advocacy - Something I need to work on, but being able to self-advocate and ask questions is just as important as communication with my peers.
 
-Integrity - Lying about my progress and taking massive shortcuts only hurts me in the long run, so staying honest with myself on where I am at is important for me to be able to learn 
+Integrity - Lying about my progress and taking massive shortcuts only hurts me in the long run, so staying honest with myself on where I am at is important for me to be able to learn.
 
