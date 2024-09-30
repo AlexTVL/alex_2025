@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Interests
-course: interests 
+title: Ideas
+course: ideas 
 menu: nav/home.html
 ---
 
