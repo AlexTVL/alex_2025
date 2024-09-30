@@ -17,17 +17,17 @@ permalink: /rpg/
     const image = {src: image_src, data: image_data};
 
     // Sprite data
-    const sprite_src = "{{site.baseurl}}/images/rpg/person.png";
+    const sprite_src = "{{site.baseurl}}/images/rpg/ashKetchup.png";
     const sprite_data = {
         SCALE_FACTOR: 10,
         STEP_FACTOR: 1000,
         ANIMATION_RATE: 50,
-        pixels: {height: 2397, width: 1601 },
-        orientation: {rows: 4, columns: 3 },
-        down: {row: 0, start: 0, columns: 0 },
-        left: {row: 2, start: 0, columns: 0 },
-        right: {row: 3, start: 0, columns: 0 },
-        up: {row: 1, start: 0, columns: 0 },
+        pixels: {height: 231, width: 219 },
+        orientation: {rows: 4, columns: 4 },
+        down: {row: 0, start: 0, columns: 1 },
+        left: {row: 1, start: 0, columns: 1 },
+        right: {row: 2, start: 0, columns: 1 },
+        up: {row: 3, start: 0, columns:  },
     };
     const sprite = {src: sprite_src, data: sprite_data};
 
