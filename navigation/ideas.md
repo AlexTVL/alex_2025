@@ -50,6 +50,9 @@ Here are some of my ideas for my RPG game!
     - Enhance the visual aspects of the game
     - Maybe add NPCs that could potentially give quests
 
+<br>
+<br>
+
 
 ## Here is an image gallery that corresponds to my ideas!
 
