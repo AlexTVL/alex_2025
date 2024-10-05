@@ -25,8 +25,8 @@ const GameControl = {
     start: function(assets = {}) {
         GameEnv.create(); // Create the Game World, this is pre-requisite for all game objects.
         this.background = new Background(assets.image || null);
-        this.turtle = new Turtle(assets.turtle || null);
-        this.fish = new Fish(assets.fish || null);
+        this.turtle = new Turtle(assets.sprite || null);
+        this.fish = new Fish(assets.sprite || null);
         this.gameLoop();
     },
 
