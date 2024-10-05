@@ -7,7 +7,7 @@ const ANIMATION_RATE = 1; // 1/nth of the frame rate
 
 // Skeleton sprite sheet data
 const skeletonSprite = {
-    src: '/mnt/data/skeleton.png', // Path to the skeleton sprite sheet
+    src: 'images/rpg/skeleton.png', // Path to the skeleton sprite sheet
     data: {
         pixels: { width: 512, height: 256 }, // Total size of the sprite sheet
         orientation: { columns: 8, rows: 4 }, // 8 frames per row, 4 rows for directions
