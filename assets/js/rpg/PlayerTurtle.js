@@ -1,6 +1,6 @@
 import Player from './Player.js';
 
-class Turtle extends Player {
+class sprite extends Player {
     constructor(imageSrc = null) {
         super(imageSrc);
     }
@@ -52,4 +52,4 @@ class Turtle extends Player {
     }
 }
 
-export default Turtle;
+export default sprite;

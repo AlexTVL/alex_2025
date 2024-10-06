@@ -4,8 +4,6 @@ import GameEnv from './GameEnv.js';
 const SCALE_FACTOR = 25; // 1/nth of the height of the canvas
 const STEP_FACTOR = 100; // 1/nth, or N steps up and across the canvas
 const ANIMATION_RATE = 1; // 1/nth of the frame rate
-const player1 = new Player(sprite, { x: 100, y: 150 }); // Starts at (100, 150)
-const player2 = new Player(sprite1, { x: 300, y: 200 }); // Starts at (300, 200)
 
 
 /**
