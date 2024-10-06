@@ -39,12 +39,7 @@ const ANIMATION_RATE = 1; // 1/nth of the frame rate
  * @method handleKeyUp - Handles key up events to stop the player's velocity.
  */
 class Player {
-    /**
-     * The constructor method is called when a new Player object is created.
-     * 
-     * @param {Object|null} sprite - The sprite data for the player. If null, a default red square is used.
-     */
-    constructor(sprite = null) {
+    constructor(sprite = null, startPosition = {x: 0, y: GameEnv.innerHeight - (GameEnv.innerHeight / SCALE_FACTOR)}) {
         // Initialize the player's scale based on the game environment
         this.scale = { width: GameEnv.innerWidth, height: GameEnv.innerHeight };
 
@@ -53,7 +48,7 @@ class Player {
             this.scaleFactor = sprite.data.SCALE_FACTOR || SCALE_FACTOR;
             this.stepFactor = sprite.data.STEP_FACTOR || STEP_FACTOR;
             this.animationRate = sprite.data.ANIMATION_RATE || ANIMATION_RATE;
-    
+
             // Load the sprite sheet
             this.spriteSheet = new Image();
             this.spriteSheet.src = sprite.src;
@@ -75,8 +70,11 @@ class Player {
         // Set the initial size of the player
         this.size = GameEnv.innerHeight / this.scaleFactor;
 
-        // Initialize the player's position and velocity
-        this.position = { x: 0, y: GameEnv.innerHeight - this.size };
+        // Use the provided startPosition or default to the bottom-left corner
+        this.position = {
+            x: startPosition.x,
+            y: startPosition.y
+        };
         this.velocity = { x: 0, y: 0 };
 
         // Set the initial size and velocity of the player
@@ -86,6 +84,7 @@ class Player {
         this.bindEventListeners();
     }
 
+    
     /**
      * Resizes the player based on the game environment.
      * 
