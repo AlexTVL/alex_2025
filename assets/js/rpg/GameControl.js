@@ -1,7 +1,7 @@
 import GameEnv from './GameEnv.js';
 import Background from './Background.js';
-import Fish from './PlayerFish.js';
-import Turtle from './PlayerTurtle.js';
+import sprite1 from './PlayerFish.js';
+import sprite from './PlayerTurtle.js';
 
 /**
  * The GameControl object manages the game.
@@ -14,8 +14,8 @@ import Turtle from './PlayerTurtle.js';
  * making it easier to manage game states, handle events, and maintain the overall flow of the game.
  * 
  * @type {Object}
- * @property {Player} turtle - The player object.
- * @property {Player} fish 
+ * @property {Player} sprite - The player object.
+ * @property {Player} sprite1 
  * @property {function} start - Initialize game assets and start the game loop.
  * @property {function} gameLoop - The game loop.
  * @property {function} resize - Resize the canvas and player object when the window is resized.
@@ -25,23 +25,23 @@ const GameControl = {
     start: function(assets = {}) {
         GameEnv.create(); // Create the Game World, this is pre-requisite for all game objects.
         this.background = new Background(assets.image || null);
-        this.turtle = new Turtle(assets.sprite || null);
-        this.fish = new Fish(assets.sprite1 || null);
+        this.sprite = new sprite(assets.sprite || null);
+        this.sprite1 = new sprite1(assets.sprite1 || null);
         this.gameLoop();
     },
 
     gameLoop: function() {
         GameEnv.clear(); // Clear the canvas
         this.background.draw();
-        this.turtle.update(); // Change from this.Turtle to this.turtle
-        this.fish.update();   // Change from this.Fish to this.fish
+        this.sprite.update(); // Change from this.Turtle to this.turtle
+        this.sprite1.update();   // Change from this.Fish to this.fish
         requestAnimationFrame(this.gameLoop.bind(this));
     },
 
     resize: function() {
         GameEnv.resize(); // Adapts the canvas to the new window size
-        this.turtle.resize(); // Change from this.Turtle to this.turtle
-        this.fish.resize();   // Change from this.Fish to this.fish
+        this.sprite.resize(); // Change from this.Turtle to this.turtle
+        this.sprite1.resize();   // Change from this.Fish to this.fish
     }
 };
 
