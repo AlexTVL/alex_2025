@@ -70,7 +70,7 @@ class GameLevelWater {
         pixels: {height: 546, width: 457},
         INIT_POSITION: { x: (width / 2), y: (height / 2)},
         orientation: {rows: 8, columns: 7 },
-        down: {row: 2, start: 2, columns: 2 },  // This is the stationary npc, down is default 
+        down: {row: 2, start: 0, columns: 2 },  // This is the stationary npc, down is default 
     };
 
     // List of objects defnitions for this level
