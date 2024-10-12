@@ -22,7 +22,7 @@ class GameLevelWater {
     const image_data_back = {
         name: 'back',
         src: image_src_back,
-        pixels: {height: 580, width: 1038}
+        pixels: {height: 900, width: 1600}
     };
 
     // Player 1 sprite data (turtle)
@@ -35,12 +35,12 @@ class GameLevelWater {
         STEP_FACTOR: 1000,
         ANIMATION_RATE: 50,
         INIT_POSITION: { x: 0, y: height - (height/PLAYER1_SCALE_FACTOR) }, 
-        pixels: {height: 280, width: 256},
-        orientation: {rows: 4, columns: 3 },
-        down: {row: 0, start: 0, columns: 3 },
-        left: {row: 1, start: 0, columns: 3 },
-        right: {row: 2, start: 0, columns: 3 },
-        up: {row: 3, start: 0, columns: 3 },
+        pixels: {height: 256, width: 576},
+        orientation: {rows: 4, columns: 9 },
+        down: {row: 2, start: 0, columns: 9 },
+        left: {row: 1, start: 0, columns: 9 },
+        right: {row: 3, start: 0, columns: 9 },
+        up: {row: 0, start: 0, columns: 9 },
     };
 
     // Player 2 sprite data (fish)
