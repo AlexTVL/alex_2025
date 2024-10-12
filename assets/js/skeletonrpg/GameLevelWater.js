@@ -65,7 +65,7 @@ class GameLevelWater {
     const sprite_data_npc = {
         name: 'npc',
         src: sprite_src_npc,
-        SCALE_FACTOR: 16,  // Adjust this based on your scaling needs
+        SCALE_FACTOR: 50,  // Adjust this based on your scaling needs
         ANIMATION_RATE: 50,
         pixels: {height: 190, width: 90},
         INIT_POSITION: { x: (width / 2), y: (height / 2)},
