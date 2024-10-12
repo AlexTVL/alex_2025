@@ -67,7 +67,7 @@ class GameLevelWater {
         src: sprite_src_npc,
         SCALE_FACTOR: 16,  // Adjust this based on your scaling needs
         ANIMATION_RATE: 50,
-        pixels: {height: 256, width: 384},
+        pixels: {height: 546, width: 457},
         INIT_POSITION: { x: (width / 2), y: (height / 2)},
         orientation: {rows: 8, columns: 7 },
         down: {row: 2, start: 2, columns: 2 },  // This is the stationary npc, down is default 
