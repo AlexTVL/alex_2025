@@ -18,7 +18,7 @@ class GameLevelWater {
     let height = GameEnv.innerHeight;
 
     // Background data
-    const image_src_back = path + "/images/rpg/anorLondo.png";
+    const image_src_back = path + "/images/rpg/anorLondo.jpg";
     const image_data_back = {
         name: 'back',
         src: image_src_back,
