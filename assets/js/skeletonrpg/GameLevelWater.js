@@ -51,13 +51,13 @@ class GameLevelWater {
         SCALE_FACTOR: 16,
         STEP_FACTOR: 400,
         ANIMATION_RATE: 50,
-        pixels: {height: 256, width: 384},
+        pixels: {height: 256, width: 576},
         INIT_POSITION: { x: 0, y: 0 },
-        orientation: {rows: 8, columns: 12 },
-        down: {row: 0, start: 0, columns: 3 },  // 1st row
-        left: {row: 1, start: 0, columns: 3 },  // 2nd row
-        right: {row: 2, start: 0, columns: 3 }, // 3rd row
-        up: {row: 3, start: 0, columns: 3 },    // 4th row
+        orientation: {rows: 4, columns: 9 },
+        down: {row: 2, start: 0, columns: 9 },  // 1st row
+        left: {row: 1, start: 0, columns: 9 },  // 2nd row
+        right: {row: 3, start: 0, columns: 9 }, // 3rd row
+        up: {row: 0, start: 0, columns: 9 },    // 4th row
     };
 
     // NPC sprite data (frog)
