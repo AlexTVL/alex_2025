@@ -26,15 +26,15 @@ class GameLevelWater {
     };
 
     // Player 1 sprite data (turtle)
-    const TURTLE_SCALE_FACTOR = 10;
-    const sprite_src_turtle = path + "/images/rpg/turtle.png";
-    const sprite_data_turtle = {
+    const PLAYER1_SCALE_FACTOR = 10;
+    const sprite_src_player1 = path + "/images/rpg/turtle.png";
+    const sprite_data_player1 = {
         name: 'turtle',
-        src: sprite_src_turtle,
-        SCALE_FACTOR: TURTLE_SCALE_FACTOR,
+        src: sprite_src_player1,
+        SCALE_FACTOR: PLAYER1_SCALE_FACTOR,
         STEP_FACTOR: 1000,
         ANIMATION_RATE: 50,
-        INIT_POSITION: { x: 0, y: height - (height/TURTLE_SCALE_FACTOR) }, 
+        INIT_POSITION: { x: 0, y: height - (height/PLAYER1_SCALE_FACTOR) }, 
         pixels: {height: 280, width: 256},
         orientation: {rows: 4, columns: 3 },
         down: {row: 0, start: 0, columns: 3 },
@@ -44,10 +44,10 @@ class GameLevelWater {
     };
 
     // Player 2 sprite data (fish)
-    const sprite_src_fish = path + "/images/rpg/fishies.png";
-    const sprite_data_fish = {
+    const sprite_src_player2 = path + "/images/rpg/fishies.png";
+    const sprite_data_player2 = {
         name: 'fish',
-        src: sprite_src_fish,
+        src: sprite_src_player2,
         SCALE_FACTOR: 16,
         STEP_FACTOR: 400,
         ANIMATION_RATE: 50,
@@ -61,10 +61,10 @@ class GameLevelWater {
     };
 
     // NPC sprite data (frog)
-    const sprite_src_frog = path + "/images/rpg/fishies.png";
-    const sprite_data_frog = {
+    const sprite_src_npc = path + "/images/rpg/fishies.png";
+    const sprite_data_npc = {
         name: 'npc',
-        src: sprite_src_frog,
+        src: sprite_src_npc,
         SCALE_FACTOR: 16,  // Adjust this based on your scaling needs
         ANIMATION_RATE: 50,
         pixels: {height: 256, width: 384},
@@ -75,10 +75,10 @@ class GameLevelWater {
 
     // List of objects defnitions for this level
     this.objects = [
-      { class: Background, data: image_data_water },
-      { class: PlayerOne, data: sprite_data_turtle },
-      { class: PlayerTwo, data: sprite_data_fish },
-      { class: NPC, data: sprite_data_frog }
+      { class: Background, data: image_data_back },
+      { class: PlayerOne, data: sprite_data_player1 },
+      { class: PlayerTwo, data: sprite_data_player2 },
+      { class: NPC, data: sprite_data_npc }
     ];
   }
 
