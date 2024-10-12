@@ -27,9 +27,9 @@ class GameLevelWater {
 
     // Player 1 sprite data (turtle)
     const PLAYER1_SCALE_FACTOR = 10;
-    const sprite_src_player1 = path + "/images/rpg/turtle.png";
+    const sprite_src_player1 = path + "/images/rpg/skeleton.png";
     const sprite_data_player1 = {
-        name: 'turtle',
+        name: 'player1',
         src: sprite_src_player1,
         SCALE_FACTOR: PLAYER1_SCALE_FACTOR,
         STEP_FACTOR: 1000,
@@ -44,9 +44,9 @@ class GameLevelWater {
     };
 
     // Player 2 sprite data (fish)
-    const sprite_src_player2 = path + "/images/rpg/fishies.png";
+    const sprite_src_player2 = path + "/images/rpg/skeleton.png";
     const sprite_data_player2 = {
-        name: 'fish',
+        name: 'player2',
         src: sprite_src_player2,
         SCALE_FACTOR: 16,
         STEP_FACTOR: 400,
