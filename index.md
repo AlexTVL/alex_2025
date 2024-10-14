@@ -255,6 +255,44 @@ Have had some issues with the sprites, but was able to change the background, an
 
 ![alt text](<Screenshot 2024-09-26 191507.png>)
 
+<br>
+<br>
+<br>
+
+# Coding Journey
+
+<br>
+
+## Resources
+Here are the resources I use for coding
+
+<br>
+
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+    <a href="https://github.com/jm1021/john_2025">
+        <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
+    </a>
+    <a href="https://jm1021.github.io/john_2025/">
+        <img src="https://img.shields.io/badge/GitHub%20Pages-327FC7?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Pages">
+    </a>
+    <a href="https://kasm.nighthawkcodingsociety.com/">
+        <img src="https://img.shields.io/badge/KASM-0078D4?style=for-the-badge&logo=kasm&logoColor=white" alt="KASM">
+    </a>
+    <a href="{{site.baseurl}}/kasm/quick/setup">
+        <img src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white" alt="Ubuntu">
+    </a>
+    <a href="https://vscode.dev/">
+        <img src="https://img.shields.io/badge/VSCode-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white" alt="VSCode">
+    </a>
+</div>
+
+## My Games
+Here are some of my games and the verisons related to them
+
+<br> 
+<br>
+
+
 <script src="https://utteranc.es/client.js"
         repo="AlexTVL/alex_2025"
         issue-term="title"
