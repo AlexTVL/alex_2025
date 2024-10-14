@@ -216,11 +216,6 @@ Using Markdown form index.md. We are learning Markdown.
 - Focus on tehnical communications through project presentations and student led teaching
 - Grades are on projects, learnt concepts, and live reviews between student(s) and teacher
 ```
-Funny
-![image](https://github.com/user-attachments/assets/4af320b9-76cb-4f03-9579-312429fe32eb)
-
-VSCode test
-
 
 Frontend Development Hacks: Dead Cells Theme
 
