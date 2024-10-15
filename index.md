@@ -295,12 +295,12 @@ Here are some of my games and the verisons related to them
             Snake
         </div>
     </a>
-    <a href="{{site.baseurl}}/navigation/skeletonrpg" style="text-decoration: none;">
+    <a href="{{site.baseurl}}/navigation/rpg" style="text-decoration: none;">
         <div style="background-color: #44fcf0; color: white; padding: 20px 30px; border-radius: 8px; font-weight: bold;">
             RPG Current Version
         </div>
     </a>
-    <a href="{{site.baseurl}}/navigation/rpg" style="text-decoration: none;">
+    <a href="{{site.baseurl}}/navigation/rpgog" style="text-decoration: none;">
         <div style="background-color: #eef573; color: white; padding: 20px 30px; border-radius: 8px; font-weight: bold;">
             RPG Older Version #1
         </div>
