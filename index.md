@@ -275,9 +275,6 @@ Here are the resources I use for coding
     <a href="https://AlexTVL.github.io/alex_2025/">
         <img src="https://img.shields.io/badge/GitHub%20Pages-327FC7?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Pages">
     </a>
-    <a href="{{site.baseurl}}/kasm/quick/setup">
-        <img src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white" alt="Ubuntu">
-    </a>
     <a href="https://vscode.dev/">
         <img src="https://img.shields.io/badge/VSCode-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white" alt="VSCode">
     </a>
