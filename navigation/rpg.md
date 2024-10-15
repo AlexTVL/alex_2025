@@ -1,7 +1,6 @@
 ---
 layout: base
 title: RPG
-course: rpg
 permalink: /rpg/
 ---
 

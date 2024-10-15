@@ -1,7 +1,6 @@
 ---
 layout: base
 title: RPG OG
-course: rpgog
 permalink: /rpgog/
 ---
 
