@@ -1,7 +1,7 @@
 ---
-layout: base
-title: RPG OG
-permalink: /rpgog/
+layout: post
+title: RPGOG
+course: rpgog
 ---
 
 <style>
