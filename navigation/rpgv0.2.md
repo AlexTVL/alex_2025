@@ -1,7 +1,7 @@
 ---
 layout: post
-title: RPGOG
-course: rpgog
+title: RPGV0.2 
+course: rpgv0.2
 ---
 
 <style>
@@ -32,7 +32,7 @@ course: rpgog
 </div>
 
 <script type="module">
-    import GameControl from '{{site.baseurl}}/assets/js/rpg/GameControl.js';
+    import GameControl from '{{site.baseurl}}/assets/js/rpgv0.2/GameControl.js';
 
     const path = "{{site.baseurl}}";
 
