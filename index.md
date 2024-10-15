@@ -291,17 +291,17 @@ Here are some of my games and the verisons related to them
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
     <a href="{{site.baseurl}}/navigation/snake" style="text-decoration: none;">
-        <div style="background-color: #00FF00; color: black; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
+        <div style="background-color: #42a1f5; color: white; padding: 20px 30px; border-radius: 8px; font-weight: bold;">
             Snake
         </div>
     </a>
-    <a href="{{site.baseurl}}/rpg/dot0" style="text-decoration: none;">
-        <div style="background-color: #FF0000; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
+    <a href="{{site.baseurl}}/navigation/skeletonrpg" style="text-decoration: none;">
+        <div style="background-color: #44fcf0; color: white; padding: 20px 30px; border-radius: 8px; font-weight: bold;">
             RPG Current Version
         </div>
     </a>
-    <a href="{{site.baseurl}}/rpg/dot1" style="text-decoration: none;">
-        <div style="background-color: #FF8800; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
+    <a href="{{site.baseurl}}/navigation/rpg" style="text-decoration: none;">
+        <div style="background-color: #eef573; color: white; padding: 20px 30px; border-radius: 8px; font-weight: bold;">
             RPG Older Version #1
         </div>
     </a>
