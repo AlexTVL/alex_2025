@@ -1,7 +1,8 @@
 ---
 layout: base
-title: RPG
-permalink: /rpg/
+title: RPG OG
+course: rpgog
+permalink: /rpgog/
 ---
 
 <style>
