@@ -287,22 +287,22 @@ Here are some of my games and the verisons related to them
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
     <a href="{{site.baseurl}}/navigation/snake" style="text-decoration: none;">
-        <div style="background-color: #42a1f5; color: white; padding: 20px 30px; border-radius: 8px; font-weight: bold;">
+        <div style="background-color: #42a1f5; color: white; padding: 15px 25px; border-radius: 8px; font-weight: bold;">
             Snake
         </div>
     </a>
     <a href="{{site.baseurl}}/navigation/rpgv0.2" style="text-decoration: none;">
-        <div style="background-color: #44fcf0; color: white; padding: 20px 30px; border-radius: 8px; font-weight: bold;">
+        <div style="background-color: #44fcf0; color: white; padding: 15px 25px; border-radius: 8px; font-weight: bold;">
             RPG v0.2
         </div>
     </a>
     <a href="{{site.baseurl}}/navigation/rpgv0.1" style="text-decoration: none;">
-        <div style="background-color: #eef573; color: white; padding: 20px 30px; border-radius: 8px; font-weight: bold;">
+        <div style="background-color: #eef573; color: white; padding: 15px 25px; border-radius: 8px; font-weight: bold;">
             RPG v0.1
         </div>
     </a>
     <a href="{{site.baseurl}}/navigation/rpgv0.0" style="text-decoration: none;">
-        <div style="background-color: #ff3814; color: white; padding: 20px 30px; border-radius: 8px; font-weight: bold;">
+        <div style="background-color: #ff3814; color: white; padding: 15px 25px; border-radius: 8px; font-weight: bold;">
             RPG v0.0
         </div>
     </a>
