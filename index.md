@@ -314,18 +314,18 @@ Here are my current Sprint2 Jupyter Notebooks that I have completed so far
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
     <a href="{{site.baseurl}}/csse/javascript/fundamentals/variables/" style="text-decoration: none;">
-        <div style="background-color: #000000; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
+        <div style="background-color: #000000; color: white; padding: 15px 25px; border-radius: 10px; font-weight: bold;">
             Variables I/O
         </div>
     </a>
     <a href="{{site.baseurl}}/csse/javascript/fundamentals/data-types/" style="text-decoration: none;">
-        <div style="background-color: #FF0000; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
+        <div style="background-color: #FF0000; color: white; padding: 15px 25px; border-radius: 10px; font-weight: bold;">
             Data Types
         </div>
     </a>
-    <a href="{{site.baseurl}}/csse/javascript/fundamentals/data-types/" style="text-decoration: none;">
-        <div style="background-color: #FF0000; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
-            Data Types
+    <a href="{{site.baseurl}}/game/intro/json" style="text-decoration: none;">
+        <div style="background-color: #FF0000; color: white; padding: 15px 25px; border-radius: 10px; font-weight: bold;">
+            JSON Objects
         </div>
     </a>
 </div>
