@@ -284,7 +284,6 @@ Here are the resources I use for coding
 Here are some of my games and the verisons related to them
 
 <br> 
-<br>
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
     <a href="{{site.baseurl}}/navigation/snake" style="text-decoration: none;">
@@ -311,6 +310,8 @@ Here are some of my games and the verisons related to them
 
 ## My Notebooks
 Here are my current Sprint2 Jupyter Notebooks that I have completed so far
+
+<br>
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
     <a href="{{site.baseurl}}/csse/javascript/fundamentals/variables" style="text-decoration: none;">
