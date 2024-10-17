@@ -7,6 +7,7 @@ class NPC extends Player {
         this.alertTimeout = null;
     }
 
+
     /**
      * Override the update method to draw the NPC.
      * This NPC is stationary, so the update method only calls the draw method.
@@ -97,12 +98,15 @@ class NPC extends Player {
                 // The distance is less than 100 pixels
                 if (player != npc && distance <= 100) {
                     names.push(player.spriteData.name);
+
+                    if (distance < 50) {
+                        this.handleResponse('Wow, ${names.join(',')}, you are really close!')
+                    } else {
+                        this.handleResponse('Hello, ${names.join(', ')}, You are at a good distance.')
+                    }
                 }
             });
-            // Join all player names inside the proximity
-            if (names.length > 0) {
-                this.handleResponse(`Hello, ${names.join(', ')}`);
-            }
+            
         }
     }
 }
