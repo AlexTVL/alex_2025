@@ -334,7 +334,7 @@ Here are my current Sprint2 Jupyter Notebooks that I have completed so far
             JSON Objects
         </div>
     </a>
-    <a href="{{site.baseurl}}:/csse/javascript/fundamentals/for-loops/" style="text-decoration: none;">
+    <a href="{{site.baseurl}}/csse/javascript/fundamentals/for-loops/" style="text-decoration: none;">
         <div style="background-color: #eb34dc; color: white; padding: 15px 25px; border-radius: 10px; font-weight: bold;">
             For-Loops
         </div>
