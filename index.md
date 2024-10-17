@@ -249,7 +249,7 @@ Probably the thing I am the most proud of with all the time I put into it, and i
 
 ![alt text](<Screenshot 2024-09-26 191318.png>)
 
-## My RPG
+## My RPG (Outdated)
 
 Have had some issues with the sprites, but was able to change the background, and the sprite at least faces the direction it is going!
 
