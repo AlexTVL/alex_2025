@@ -100,9 +100,9 @@ class NPC extends Player {
                     names.push(player.spriteData.name);
                     if (names.length > 0) {
                         if (distance < 50) {
-                        this.handleResponse('Wow, ${names.join(', ')}, you are really close!')
+                        this.handleResponse(`Wow, ${names.join(', ')}, you are really close!`)
                         } else {
-                        this.handleResponse('Hello, ${names.join(', ')}! You are at a good distance.')
+                        this.handleResponse(`Hello, ${names.join(', ')}! You are at a good distance.`)
                         }
                     }
                 }
