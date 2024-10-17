@@ -291,6 +291,11 @@ Here are some of my games and the verisons related to them
             Snake
         </div>
     </a>
+    <a href="{{site.baseurl}}/navigation/rpgv0.3" style="text-decoration: none;">
+        <div style="background-color: #44fcf0; color: white; padding: 15px 25px; border-radius: 8px; font-weight: bold;">
+            RPG v0.3
+        </div>
+    </a>
     <a href="{{site.baseurl}}/navigation/rpgv0.2" style="text-decoration: none;">
         <div style="background-color: #44fcf0; color: white; padding: 15px 25px; border-radius: 8px; font-weight: bold;">
             RPG v0.2
@@ -327,6 +332,11 @@ Here are my current Sprint2 Jupyter Notebooks that I have completed so far
     <a href="{{site.baseurl}}/game/intro/json" style="text-decoration: none;">
         <div style="background-color: #eb34dc; color: white; padding: 15px 25px; border-radius: 10px; font-weight: bold;">
             JSON Objects
+        </div>
+    </a>
+    <a href="{{site.baseurl}}:/csse/javascript/fundamentals/for-loops/" style="text-decoration: none;">
+        <div style="background-color: #eb34dc; color: white; padding: 15px 25px; border-radius: 10px; font-weight: bold;">
+            For-Loops
         </div>
     </a>
 </div>
