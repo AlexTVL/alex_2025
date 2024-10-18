@@ -98,7 +98,7 @@ class NPC extends Player {
                 // The distance is less than 100 pixels
                 if (player != npc && distance <= 100) {
                     names.push(player.spriteData.name);
-                    if (names.length > 0) {
+                    for (let i = 0; i < names.length; i++ ) {
                         if (distance < 50) {
                         this.handleResponse(`You see that guy in the bottom right? HE knows the guy who will get you out of here`)
                         } else {
