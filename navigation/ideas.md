@@ -5,8 +5,7 @@ course: ideas
 menu: nav/home.html
 ---
 # Ideas Revamped:
- 
-<br>
+
 <br>
 
 ## First Level
