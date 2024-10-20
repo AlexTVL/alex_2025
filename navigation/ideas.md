@@ -4,7 +4,10 @@ title: Ideas
 course: ideas 
 menu: nav/home.html
 ---
-# Ideas Revamped: 
+# Ideas Revamped:
+ 
+<br>
+<br>
 
 ## First Level
 
