@@ -341,6 +341,32 @@ Here are my current Sprint2 Jupyter Notebooks that I have completed so far
     </a>
 </div>
 
+## Sprint 3 Notebooks: What I Have Completed So Far
+
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+    <a href="{{site.baseurl}}/csse/javascript/fundamentals/conditionals/hacks" style="text-decoration: none;">
+        <div style="background-color: #3aeb34; color: white; padding: 15px 25px; border-radius: 10px; font-weight: bold;">
+            Conditions
+        </div>
+    </a>
+    <a href="{{site.baseurl}}/mathexpressions/" style="text-decoration: none;">
+        <div style="background-color: #34ebd9; color: white; padding: 15px 25px; border-radius: 10px; font-weight: bold;">
+            Math Expressions
+        </div>
+    </a>
+    <a href="{{site.baseurl}}/csp/big-idea/p4/3-7-2" style="text-decoration: none;">
+        <div style="background-color: #eb34dc; color: white; padding: 15px 25px; border-radius: 10px; font-weight: bold;">
+            Nested Conditionals 
+        </div>
+    </a>
+    <a href="{{site.baseurl}}/variableshw/" style="text-decoration: none;">
+        <div style="background-color: #bc42f5; color: white; padding: 15px 25px; border-radius: 10px; font-weight: bold;">
+            Variables
+        </div>
+    </a>
+</div>
+
+
 <script src="https://utteranc.es/client.js"
         repo="AlexTVL/alex_2025"
         issue-term="title"
