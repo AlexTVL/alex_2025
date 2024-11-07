@@ -341,9 +341,10 @@ Here are my current Sprint2 Jupyter Notebooks that I have completed so far
     </a>
 </div>
 
+<br>
+
 ### Sprint 3 Notebooks: What I Have Completed So Far
 
-<br>
 <br>
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
