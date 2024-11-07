@@ -280,6 +280,8 @@ Here are the resources I use for coding
     </a>
 </div>
 
+<br>
+
 ## My Games
 Here are some of my games and the verisons related to them
 
@@ -312,6 +314,8 @@ Here are some of my games and the verisons related to them
         </div>
     </a>
 </div>
+
+<br>
 
 ## My Notebooks
 Here are my current Sprint2 Jupyter Notebooks that I have completed so far
