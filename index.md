@@ -362,7 +362,7 @@ Here are my current Sprint2 Jupyter Notebooks that I have completed so far
             Math Expressions
         </div>
     </a>
-    <a href="{{site.baseurl}}/csp/big-idea/p4/3-7-2" style="text-decoration: none;">
+    <a href="{{site.baseurl}}/csse/big-idea/p4/3-7-2" style="text-decoration: none;">
         <div style="background-color: #eb34dc; color: white; padding: 15px 25px; border-radius: 10px; font-weight: bold;">
             Nested Conditionals 
         </div>
