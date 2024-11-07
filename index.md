@@ -341,7 +341,10 @@ Here are my current Sprint2 Jupyter Notebooks that I have completed so far
     </a>
 </div>
 
-## Sprint 3 Notebooks: What I Have Completed So Far
+### Sprint 3 Notebooks: What I Have Completed So Far
+
+<br>
+<br>
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
     <a href="{{site.baseurl}}/csse/javascript/fundamentals/conditionals/hacks" style="text-decoration: none;">
