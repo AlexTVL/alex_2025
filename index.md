@@ -358,7 +358,7 @@ Here are my current Sprint2 Jupyter Notebooks that I have completed so far
         </div>
     </a>
     <a href="{{site.baseurl}}/mathexpressions/" style="text-decoration: none;">
-        <div style="background-color: #8ecf34; color: black; padding: 15px 25px; border-radius: 10px; font-weight: bold;">
+        <div style="background-color: #ba34cf; color: black; padding: 15px 25px; border-radius: 10px; font-weight: bold;">
             Math Expressions
         </div>
     </a>
