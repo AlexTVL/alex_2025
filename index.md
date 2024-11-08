@@ -289,27 +289,27 @@ Here are some of my games and the verisons related to them
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
     <a href="{{site.baseurl}}/navigation/snake" style="text-decoration: none;">
-        <div style="background-color: #42a1f5; color: white; padding: 15px 25px; border-radius: 8px; font-weight: bold;">
+        <div style="background-color: #42a1f5; color: black; padding: 15px 25px; border-radius: 8px; font-weight: bold;">
             Snake
         </div>
     </a>
     <a href="{{site.baseurl}}/navigation/rpgv0.3" style="text-decoration: none;">
-        <div style="background-color: #42f593; color: white; padding: 15px 25px; border-radius: 8px; font-weight: bold;">
+        <div style="background-color: #42f593; color: black; padding: 15px 25px; border-radius: 8px; font-weight: bold;">
             RPG v0.3
         </div>
     </a>
     <a href="{{site.baseurl}}/navigation/rpgv0.2" style="text-decoration: none;">
-        <div style="background-color: #44fcf0; color: white; padding: 15px 25px; border-radius: 8px; font-weight: bold;">
+        <div style="background-color: #44fcf0; color: black; padding: 15px 25px; border-radius: 8px; font-weight: bold;">
             RPG v0.2
         </div>
     </a>
     <a href="{{site.baseurl}}/navigation/rpgv0.1" style="text-decoration: none;">
-        <div style="background-color: #eef573; color: white; padding: 15px 25px; border-radius: 8px; font-weight: bold;">
+        <div style="background-color: #eef573; color: black; padding: 15px 25px; border-radius: 8px; font-weight: bold;">
             RPG v0.1
         </div>
     </a>
     <a href="{{site.baseurl}}/navigation/rpgv0.0" style="text-decoration: none;">
-        <div style="background-color: #ff3814; color: white; padding: 15px 25px; border-radius: 8px; font-weight: bold;">
+        <div style="background-color: #ff3814; color: black; padding: 15px 25px; border-radius: 8px; font-weight: bold;">
             RPG v0.0
         </div>
     </a>
@@ -324,22 +324,22 @@ Here are my current Sprint2 Jupyter Notebooks that I have completed so far
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
     <a href="{{site.baseurl}}/csse/javascript/fundamentals/variables" style="text-decoration: none;">
-        <div style="background-color: #3aeb34; color: white; padding: 15px 25px; border-radius: 10px; font-weight: bold;">
+        <div style="background-color: #3aeb34; color: black; padding: 15px 25px; border-radius: 10px; font-weight: bold;">
             Variables I/O
         </div>
     </a>
     <a href="{{site.baseurl}}/csse/javascript/fundamentals/data-types/" style="text-decoration: none;">
-        <div style="background-color: #34ebd9; color: white; padding: 15px 25px; border-radius: 10px; font-weight: bold;">
+        <div style="background-color: #34ebd9; color: black; padding: 15px 25px; border-radius: 10px; font-weight: bold;">
             Data Types
         </div>
     </a>
     <a href="{{site.baseurl}}/game/intro/json" style="text-decoration: none;">
-        <div style="background-color: #eb34dc; color: white; padding: 15px 25px; border-radius: 10px; font-weight: bold;">
+        <div style="background-color: #eb34dc; color: black; padding: 15px 25px; border-radius: 10px; font-weight: bold;">
             JSON Objects
         </div>
     </a>
     <a href="{{site.baseurl}}/csse/javascript/fundamentals/for-loops/" style="text-decoration: none;">
-        <div style="background-color: #bc42f5; color: white; padding: 15px 25px; border-radius: 10px; font-weight: bold;">
+        <div style="background-color: #bc42f5; color: black; padding: 15px 25px; border-radius: 10px; font-weight: bold;">
             For-Loops
         </div>
     </a>
@@ -353,22 +353,22 @@ Here are my current Sprint2 Jupyter Notebooks that I have completed so far
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
     <a href="{{site.baseurl}}/csse/javascript/fundamentals/conditionals/hacks" style="text-decoration: none;">
-        <div style="background-color: #3aeb34; color: white; padding: 15px 25px; border-radius: 10px; font-weight: bold;">
+        <div style="background-color: #b0261c; color: black; padding: 15px 25px; border-radius: 10px; font-weight: bold;">
             Conditions
         </div>
     </a>
     <a href="{{site.baseurl}}/mathexpressions/" style="text-decoration: none;">
-        <div style="background-color: #34ebd9; color: white; padding: 15px 25px; border-radius: 10px; font-weight: bold;">
+        <div style="background-color: #8ecf34; color: black; padding: 15px 25px; border-radius: 10px; font-weight: bold;">
             Math Expressions
         </div>
     </a>
     <a href="{{site.baseurl}}/nestedconditionals/" style="text-decoration: none;">
-        <div style="background-color: #eb34dc; color: white; padding: 15px 25px; border-radius: 10px; font-weight: bold;">
+        <div style="background-color: #8ecf34; color: black; padding: 15px 25px; border-radius: 10px; font-weight: bold;">
             Nested Conditionals 
         </div>
     </a>
     <a href="{{site.baseurl}}/variableshw/" style="text-decoration: none;">
-        <div style="background-color: #bc42f5; color: white; padding: 15px 25px; border-radius: 10px; font-weight: bold;">
+        <div style="background-color: #4b34cf; color: black; padding: 15px 25px; border-radius: 10px; font-weight: bold;">
             Variables
         </div>
     </a>
