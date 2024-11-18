@@ -372,6 +372,31 @@ Here are my current Sprint2 Jupyter Notebooks that I have completed so far
             Variables
         </div>
     </a>
+    <a href="{{site.baseurl}}/csse/javascript/fundamentals/classes/intro/" style="text-decoration: none;">
+        <div style="background-color: #7176d1; color: black; padding: 15px 25px; border-radius: 10px; font-weight: bold;">
+            Arrays
+        </div>
+    </a>
+    <a href="{{site.baseurl}}/first/" style="text-decoration: none;">
+        <div style="background-color: #2fbdd6; color: black; padding: 15px 25px; border-radius: 10px; font-weight: bold;">
+            Booleans
+        </div>
+    </a>
+    <a href="{{site.baseurl}}/csse/javascript/fundamentals/data-abstraction-hacks" style="text-decoration: none;">
+        <div style="background-color: #34eb96; color: black; padding: 15px 25px; border-radius: 10px; font-weight: bold;">
+            Data Abstractions 
+        </div>
+    </a>
+    <a href="{{site.baseurl}}/csse/javascript/fundamentals/iteration/p1" style="text-decoration: none;">
+        <div style="background-color: #b1eb34; color: black; padding: 15px 25px; border-radius: 10px; font-weight: bold;">
+            Iteration
+        </div>
+    </a>
+    <a href="{{site.baseurl}}csse/lessons/strings/2024-10-30-strings-lesson-4-2.ipynb/" style="text-decoration: none;">
+        <div style="background-color: #eb9834; color: black; padding: 15px 25px; border-radius: 10px; font-weight: bold;">
+            Strings
+        </div>
+    </a>
 </div>
 
 
