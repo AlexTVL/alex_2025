@@ -21,22 +21,22 @@ class GameLevelWater {
         pixels: {height: 597, width: 340}
     };
 
-    const sprite_src_octopus = path + "/images/gamify/octopus.png"; // be sure to include the path
-    const OCTOPUS_SCALE_FACTOR = 5;
-    const sprite_data_octopus = {
-        id: 'Octopus',
-        greeting: "Hi I am Octopus, the water wanderer. I am looking for wisdome and adventure!",
-        src: sprite_src_octopus,
-        SCALE_FACTOR: OCTOPUS_SCALE_FACTOR,
+    const sprite_src_ninja = path + "/images/gamify/ninja(1).png"; // be sure to include the path
+    const NINJA_SCALE_FACTOR = 8;
+    const sprite_data_ninja = {
+        id: 'NinjaCat',
+        greeting: "Meow!",
+        src: sprite_src_ninja,
+        SCALE_FACTOR: NINJA_SCALE_FACTOR,
         STEP_FACTOR: 1000,
-        ANIMATION_RATE: 50,
-        INIT_POSITION: { x: 0, y: height - (height/OCTOPUS_SCALE_FACTOR) }, 
-        pixels: {height: 250, width: 167},
-        orientation: {rows: 3, columns: 2 },
-        down: {row: 0, start: 0, columns: 2 },
-        left: {row: 1, start: 0, columns: 2 },
-        right: {row: 1, start: 0, columns: 2 },
-        up: {row: 0, start: 0, columns: 2},
+        ANIMATION_RATE: 30,
+        INIT_POSITION: { x: 0, y: height - (height/NINJA_SCALE_FACTOR) }, 
+        pixels: {height: 136, width: 277},
+        orientation: {rows: 2, columns: 4 },
+        down: {row: 1, start: 0, columns: 3 },
+        left: {row: 0, start: 0, columns: 3 },
+        right: {row: 1, start: 0, columns: 3 },
+        up: {row: 1, start: 0, columns: 3},
         hitbox: { widthPercentage: 0.45, heightPercentage: 0.2 },
         keypress: { up: 87, left: 65, down: 83, right: 68 } // W, A, S, D
     };
@@ -76,7 +76,7 @@ class GameLevelWater {
     // List of objects definitions for this level
     this.objects = [
       { class: Background, data: image_data_water },
-      { class: Player, data: sprite_data_octopus },
+      { class: Player, data: sprite_data_ninja },
       { class: Npc, data: sprite_data_nomad },
     ];
   }
