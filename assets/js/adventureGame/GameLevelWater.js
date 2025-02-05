@@ -14,11 +14,11 @@ class GameLevelWater {
     let height = GameEnv.innerHeight;
 
     // Background data
-    const image_src_water = path + "/images/gamify/deepseadungeon.jpeg";
-    const image_data_water = {
-        id: 'Water',
-        src: image_src_water,
-        pixels: {height: 597, width: 340}
+    const image_src_background = path + "/images/gamify/adventureBackground.png";
+    const image_data_background = {
+        id: 'Background',
+        src: image_src_background,
+        pixels: {height: 1440, width: 2560}
     };
 
     const sprite_src_ninja = path + "/images/gamify/ninja(1).png"; // be sure to include the path
@@ -42,17 +42,17 @@ class GameLevelWater {
     };
 
     // NPC Data for Byte Nomad (Smaller Version)
-    const sprite_src_nomad = path + "/images/gamify/animwizard.png"; // be sure to include the path
-    const sprite_data_nomad = {
-        id: 'Javanomad',
-        greeting: "Hi I am Java Nomad, the Java mascot.  I am very happy to spend some linux shell time with you!",
-        src: sprite_src_nomad,
+    const sprite_src_bird = path + "/images/gamify/birdCat.png"; // be sure to include the path
+    const sprite_data_bird = {
+        id: 'Bird',
+        greeting: "Chirp! Chrip! Hey, there is some cat food around here, but watch out for the Face!",
+        src: sprite_src_bird,
         SCALE_FACTOR: 10,  // Adjust this based on your scaling needs
-        ANIMATION_RATE: 100,
-        pixels: {height: 307, width: 813},
+        ANIMATION_RATE: 15,
+        pixels: {height: 66, width: 379},
         INIT_POSITION: { x: (width * 3 / 4), y: (height * 3 / 4)},
-        orientation: {rows: 3, columns: 7 },
-        down: {row: 1, start: 0, columns: 6 },  // This is the stationary npc, down is default 
+        orientation: {rows: 1, columns: 4 },
+        down: {row: 0, start: 0, columns: 3 },  // This is the stationary npc, down is default 
         hitbox: { widthPercentage: 0.1, heightPercentage: 0.2 },
         // Linux command quiz
         quiz: { 
@@ -75,9 +75,9 @@ class GameLevelWater {
 
     // List of objects definitions for this level
     this.objects = [
-      { class: Background, data: image_data_water },
+      { class: Background, data: image_data_background },
       { class: Player, data: sprite_data_ninja },
-      { class: Npc, data: sprite_data_nomad },
+      { class: Npc, data: sprite_data_bird },
     ];
   }
 }
