@@ -50,7 +50,7 @@ class GameLevelWater {
         SCALE_FACTOR: 10,  // Adjust this based on your scaling needs
         ANIMATION_RATE: 15,
         pixels: {height: 66, width: 379},
-        INIT_POSITION: { x: (width * 3 / 4), y: (height * 3 / 4)},
+        INIT_POSITION: { x: (width * 3 / 4), y: (height * 3 / 4) - 250},
         orientation: {rows: 1, columns: 4 },
         down: {row: 0, start: 0, columns: 3 },  // This is the stationary npc, down is default 
         hitbox: { widthPercentage: 0.1, heightPercentage: 0.2 },
@@ -71,11 +71,12 @@ class GameLevelWater {
           ] 
         }
       };
-    this.collisionAreas = [
-      {x: 50, y: 50, width: 20, height: 20},
-      {x: 150, y: 150, width: 30, height: 30},
-      {x: 250, y: 250, width: 40, height: 40},
-    ];
+      this.collisionAreas = [
+        {x: 50, y: 50, width: 20, height: 20},
+        {x: 150, y: 150, width: 30, height: 30},
+        {x: 250, y: 250, width: 40, height: 40},
+        {x: (width * 3 / 4), y: (height * 3 / 4) - 300, width: 379 / 10, height: 66 / 10} // Bird NPC collision area
+      ];
 
     GameEnv.gameObjects.push(new Background(image_data_background));
     GameEnv.gameObjects.push(new Player(sprite_data_ninja));

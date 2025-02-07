@@ -1,5 +1,6 @@
 import GameEnv from './GameEnv.js';
 import Character from './Character.js';
+import Npc from './Npc.js';
 
 // Define non-mutable constants as defaults
 const SCALE_FACTOR = 25; // 1/nth of the height of the canvas
@@ -88,21 +89,57 @@ class Player extends Character {
         }
     }
 
+    /**
+     * Draws the player on the canvas.
+     * 
+     * This method renders the player using the sprite sheet if provided, otherwise a red square.
+     */
+    draw() {
+        if (this.spriteSheet) {
+            // Sprite Sheet frame size: pixels = total pixels / total frames
+            const frameWidth = this.spriteData.pixels.width / this.spriteData.orientation.columns;
+            const frameHeight = this.spriteData.pixels.height / this.spriteData.orientation.rows;
+
+            // Sprite Sheet direction data source (e.g., front, left, right, back)
+            const directionData = this.spriteData[this.direction];
+
+            // Sprite Sheet x and y declarations to store coordinates of current frame
+            let frameX, frameY;
+            // Sprite Sheet x and y current frame: coordinate = (index) * (pixels)
+            frameX = (directionData.start + this.frameIndex) * frameWidth;
+            frameY = directionData.row * frameHeight;
+
+            // Draw the current frame of the sprite sheet
+            GameEnv.ctx.drawImage(
+                this.spriteSheet,
+                frameX, frameY, frameWidth, frameHeight, // Source rectangle
+                this.position.x, this.position.y, this.width, this.height // Destination rectangle
+            );
+
+            // Update the frame index for animation at a slower rate
+            this.frameCounter++;
+            if (this.frameCounter % this.animationRate === 0) {
+                this.frameIndex = (this.frameIndex + 1) % directionData.columns;
+            }
+        } else {
+            // Draw default red square
+            GameEnv.ctx.fillStyle = 'red';
+            GameEnv.ctx.fillRect(this.position.x, this.position.y, this.width, this.height);
+        }
+    }
+
     update() {
         this.position.x += this.velocity.x;
         this.position.y += this.velocity.y;
 
-        if (GameEnv.currentLevel && GameEnv.currentLevel.collisionAreas) {
-            for (let area of GameEnv.currentLevel.collisionAreas) {
-                if (this.isCollidingWithArea(area)) {
-                    // Handle collision (e.g., stop movement)
-                    this.position.x -= this.velocity.x;
-                    this.position.y -= this.velocity.y;
-                    this.velocity.x = 0;
-                    this.velocity.y = 0;
-                    break;
-                }
-            }
+        // Check collision with NPC only
+        const npc = GameEnv.gameObjects.find(obj => obj instanceof Npc);
+        if (npc && this.isCollidingWithArea(npc)) {
+            // Handle collision (e.g., stop movement)
+            this.position.x -= this.velocity.x;
+            this.position.y -= this.velocity.y;
+            this.velocity.x = 0;
+            this.velocity.y = 0;
         }
 
         if (this.position.x + this.width > GameEnv.innerWidth) {
@@ -121,14 +158,17 @@ class Player extends Character {
             this.position.y = 0;
             this.velocity.y = 0;
         }
+
+        // Call the draw method to render the player
+        this.draw();
     }
 
     isCollidingWithArea(area) {
         return (
-            this.position.x < area.x + area.width &&
-            this.position.x + this.width > area.x &&
-            this.position.y < area.y + area.height &&
-            this.position.y + this.height > area.y
+            this.position.x < area.position.x + area.width &&
+            this.position.x + this.width > area.position.x &&
+            this.position.y < area.position.y + area.height &&
+            this.position.y + this.height > area.position.y
         );
     }
 }
