@@ -3,8 +3,6 @@ import GameLevelWater from './GameLevelWater.js';
 import GameLevelDesert from './GameLevelDesert.js';
 import { getStats } from "./StatsManager.js";
 
-
-
 const createStatsUI = () => {
     const statsContainer = document.createElement('div');
     statsContainer.id = 'stats-container';
@@ -67,6 +65,7 @@ const GameControl = {
         this.currentPass = 0;
         const LevelClass = this.levelClasses[this.currentLevelIndex];
         const levelInstance = new LevelClass(this.path);
+        GameEnv.currentLevel = levelInstance;
         this.loadLevelObjects(levelInstance);
     },
     
@@ -75,7 +74,9 @@ const GameControl = {
         // Instantiate the game objects
         for (let object of gameInstance.objects) {
             if (!object.data) object.data = {};
-            new object.class(object.data);
+            const instance = new object.class(object.data);
+            GameEnv.gameObjects.push(instance);
+            console.log(`Added ${object.class.name} to game objects`);
         }
         // Start the game loop
         this.gameLoop();

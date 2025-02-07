@@ -30,7 +30,7 @@ class GameLevelWater {
         SCALE_FACTOR: NINJA_SCALE_FACTOR,
         STEP_FACTOR: 1000,
         ANIMATION_RATE: 20,
-        INIT_POSITION: { x: 0, y: height - (height/NINJA_SCALE_FACTOR) }, 
+        INIT_POSITION: { x: 0, y: height - (height / NINJA_SCALE_FACTOR) }, 
         pixels: {height: 136, width: 277},
         orientation: {rows: 2, columns: 4 },
         down: {row: 1, start: 1, columns: 3 },
@@ -71,7 +71,14 @@ class GameLevelWater {
           ] 
         }
       };
+    this.collisionAreas = [
+      {x: 50, y: 50, width: 20, height: 20},
+      {x: 150, y: 150, width: 30, height: 30},
+      {x: 250, y: 250, width: 40, height: 40},
+    ];
 
+    GameEnv.gameObjects.push(new Background(image_data_background));
+    GameEnv.gameObjects.push(new Player(sprite_data_ninja));
 
     // List of objects definitions for this level
     this.objects = [
@@ -79,6 +86,10 @@ class GameLevelWater {
       { class: Player, data: sprite_data_ninja },
       { class: Npc, data: sprite_data_bird },
     ];
+
+    GameEnv.currentLevel = this;
+
+    console.log("GameLevelWater initialized with objects:", this.objects);
   }
 }
 

@@ -5,7 +5,6 @@ import Character from './Character.js';
 const SCALE_FACTOR = 25; // 1/nth of the height of the canvas
 const STEP_FACTOR = 100; // 1/nth, or N steps up and across the canvas
 const ANIMATION_RATE = 1; // 1/nth of the frame rate
-const INIT_POSITION = { x: 0, y: 0 };
 
 /**
  * Player is a dynamic class that manages the data and events for objects like a player 
@@ -25,9 +24,13 @@ class Player extends Character {
     constructor(data = null) {
         super(data);
         this.keypress = data?.keypress || {up: 87, left: 65, down: 83, right: 68};
+        this.velocity = { x: 0, y: 0 };
+        this.position = {
+            x: (GameEnv.innerWidth - (data?.pixels?.width || 0)) / 2,
+            y: GameEnv.innerHeight - (data?.pixels?.height || 0)
+        };
         this.bindEventListeners();
     }
-
 
     /**
      * Binds key event listeners to handle object movement.
@@ -85,6 +88,49 @@ class Player extends Character {
         }
     }
 
+    update() {
+        this.position.x += this.velocity.x;
+        this.position.y += this.velocity.y;
+
+        if (GameEnv.currentLevel && GameEnv.currentLevel.collisionAreas) {
+            for (let area of GameEnv.currentLevel.collisionAreas) {
+                if (this.isCollidingWithArea(area)) {
+                    // Handle collision (e.g., stop movement)
+                    this.position.x -= this.velocity.x;
+                    this.position.y -= this.velocity.y;
+                    this.velocity.x = 0;
+                    this.velocity.y = 0;
+                    break;
+                }
+            }
+        }
+
+        if (this.position.x + this.width > GameEnv.innerWidth) {
+            this.position.x = GameEnv.innerWidth - this.width;
+            this.velocity.x = 0; 
+        }
+        if (this.position.x < 0) {
+            this.position.x = 0;
+            this.velocity.x = 0;
+        }
+        if (this.position.y + this.height > GameEnv.innerHeight) {
+            this.position.y = GameEnv.innerHeight - this.height;
+            this.velocity.y = 0;
+        }
+        if (this.position.y < 0) {
+            this.position.y = 0;
+            this.velocity.y = 0;
+        }
+    }
+
+    isCollidingWithArea(area) {
+        return (
+            this.position.x < area.x + area.width &&
+            this.position.x + this.width > area.x &&
+            this.position.y < area.y + area.height &&
+            this.position.y + this.height > area.y
+        );
+    }
 }
 
 export default Player;

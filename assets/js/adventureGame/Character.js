@@ -129,7 +129,7 @@ class Character extends GameObject {
             this.canvas.style.height = `${this.height}px`;
             this.canvas.style.position = 'absolute';
             this.canvas.style.left = `${this.position.x}px`;
-            this.canvas.style.top = `${GameEnv.top+this.position.y}px`;
+            this.canvas.style.top = `${this.position.y}px`;
     
             // Clear the canvas before drawing
             this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -229,8 +229,10 @@ class Character extends GameObject {
     destroy() {
         const index = GameEnv.gameObjects.indexOf(this);
         if (index !== -1) {
-            // Remove the canvas from the DOM
-            this.canvas.parentNode.removeChild(this.canvas);
+            // Remove the canvas from the DOM if it exists
+            if (this.canvas && this.canvas.parentNode) {
+                this.canvas.parentNode.removeChild(this.canvas);
+            }
             GameEnv.gameObjects.splice(index, 1);
         }
     }
