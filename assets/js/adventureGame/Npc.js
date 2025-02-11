@@ -1,15 +1,27 @@
-import GameEnv from "./GameEnv.js";
-import Character from "./Character.js";
-import Prompt from "./Prompt.js";
+import GameEnv from './GameEnv.js';
+import Character from './Character.js';
+import Prompt from './Prompt.js';
+import Player from './Player.js'; // Import the Player class
+
 class Npc extends Character {
     constructor(data = null) {
         super(data);
-        this.quiz = data?.quiz?.title; // Quiz title
-        this.questions = Prompt.shuffleArray(data?.quiz?.questions || []); // Shuffle questions
-        this.currentQuestionIndex = 0; // Start from the first question
-        this.alertTimeout = null;
+        this.dialogueOptions = data.dialogueOptions || [
+            "Option 1: Uh, ok?",
+            "Option 2: Who are you?",
+            "Option 3: Where am I?",
+            "Option 4: What's the face?"
+        ];
+        this.responses = data.responses || [
+            "What?",
+            "Sorry, should've introduced myself. My name is Bird Cat!",
+            "The Crossroads, it's been a while since i've seen anyone though..haha...",
+            "A truly dreadful monster, you'll know when you see it!"
+        ];
+        this.greeting = data.greeting || "Hello!";
         this.bindEventListeners();
     }
+
     /**
      * Override the update method to draw the NPC.
      * This NPC is stationary, so the update method only calls the draw method.
@@ -17,63 +29,87 @@ class Npc extends Character {
     update() {
         this.draw();
     }
+
     /**
      * Bind key event listeners for proximity interaction.
      */
     bindEventListeners() {
         addEventListener('keydown', this.handleKeyDown.bind(this));
-        addEventListener('keyup', this.handleKeyUp.bind(this));
     }
+
     /**
      * Handle keydown events for interaction.
      * @param {Object} event - The keydown event.
      */
     handleKeyDown({ key }) {
-        switch (key) {
-            case 'e': // Player 1 interaction
-            case 'u': // Player 2 interaction
-                this.shareQuizQuestion();
-                break;
+        if (key === 'e' && this.isPlayerNearby()) {
+            this.shareQuizQuestion();
         }
     }
+
     /**
-     * Handle keyup events to stop player actions.
-     * @param {Object} event - The keyup event.
+     * Check if the player is nearby.
+     * @returns {boolean} - True if the player is nearby, false otherwise.
      */
-    handleKeyUp({ key }) {
-        if (key === 'e' || key === 'u') {
-            // Clear any active timeouts when the interaction key is released
-            if (this.alertTimeout) {
-                clearTimeout(this.alertTimeout);
-                this.alertTimeout = null;
-            }
+    isPlayerNearby() {
+        const player = GameEnv.gameObjects.find(obj => obj instanceof Player);
+        if (!player) return false;
+
+        const distance = Math.sqrt(
+            Math.pow(player.position.x - this.position.x, 2) +
+            Math.pow(player.position.y - this.position.y, 2)
+        );
+
+        // Increase the range for detecting proximity
+        return distance < 100; // Adjust this value as needed
+    }
+
+    /**
+     * Handle proximity interaction and share a greeting.
+     */
+    shareGreeting() {
+        if (!Prompt.isOpen) {
+            // Assign this NPC as the current NPC in the Prompt system
+            Prompt.currentNpc = this;
+            // Open the Prompt panel with this NPC's greeting
+            Prompt.showCustomPrompt(this.greeting);
         }
     }
+
     /**
-     * Get the next question in the shuffled array.
-     * @returns {string} - The next quiz question.
-     */
-    getNextQuestion() {
-        const question = this.questions[this.currentQuestionIndex];
-        this.currentQuestionIndex = (this.currentQuestionIndex + 1) % this.questions.length; // Cycle through questions
-        return question;
-    }
-    /**
-     * Handle proximity interaction and share a quiz question.
+     * Handle key press interaction and share a quiz question.
      */
     shareQuizQuestion() {
-        const players = GameEnv.gameObjects.filter(obj => obj.state.collisionEvents.includes(this.spriteData.id));
-        const hasQuestions = this.questions.length > 0;
-        if (players.length > 0 && hasQuestions) {
-            players.forEach(player => {
-                if (!Prompt.isOpen) {
-                    // Assign this NPC as the current NPC in the Prompt system
-                    Prompt.currentNpc = this;
-                    // Open the Prompt panel with this NPC's details
-                    Prompt.openPromptPanel(this);
-                }
-            });
+        if (!Prompt.isOpen) {
+            // Assign this NPC as the current NPC in the Prompt system
+            Prompt.currentNpc = this;
+            // Open the Prompt panel with this NPC's dialogue options
+            Prompt.showDialogueOptions(this.dialogueOptions, this.handleDialogueResponse.bind(this));
         }
     }
+
+    /**
+     * Handle the player's response to the dialogue options.
+     * @param {number} choice - The player's choice (1-4).
+     */
+    handleDialogueResponse(choice) {
+        const response = this.responses[choice - 1];
+        Prompt.showCustomPrompt(response);
+    }
+
+    /**
+     * Check if this NPC is colliding with a given area.
+     * @param {Object} area - The area to check for collision.
+     * @returns {boolean} - True if colliding, false otherwise.
+     */
+    isCollidingWithArea(area) {
+        return (
+            this.position.x < area.position.x + area.width &&
+            this.position.x + this.width > area.position.x &&
+            this.position.y < area.position.y + area.height &&
+            this.position.y + this.height > area.position.y
+        );
+    }
 }
+
 export default Npc;

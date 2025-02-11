@@ -1,11 +1,12 @@
 const Prompt = {
     isOpen: false,
     dim: false,
+    currentNpc: null,
 
     backgroundDim: {
-        create () {
-            this.dim = true // sets the dim to be true when the prompt is opened
-            console.log("CREATE DIM")
+        create() {
+            this.dim = true; // sets the dim to be true when the prompt is opened
+            console.log("CREATE DIM");
             const dimDiv = document.createElement("div");
             dimDiv.id = "dim";
             dimDiv.style.backgroundColor = "black";
@@ -14,25 +15,32 @@ const Prompt = {
             dimDiv.style.position = "absolute";
             dimDiv.style.opacity = "0.8";
             document.body.append(dimDiv);
-            dimDiv.style.zIndex = "9998"
-            dimDiv.addEventListener("click", Prompt.backgroundDim.remove)
+            dimDiv.style.zIndex = "9998";
+            dimDiv.addEventListener("click", Prompt.backgroundDim.remove);
         },
-        remove () {
-            this.dim = false
+        remove() {
+            this.dim = false;
             console.log("REMOVE DIM");
             const dimDiv = document.getElementById("dim");
             dimDiv.remove();
-            Prompt.isOpen = false
-            promptDropDown.style.width = this.isOpen?"70%":"0px";
-            promptDropDown.style.top = this.isOpen?"15%":"0px";
-            promptDropDown.style.left = this.isOpen?"15%":"0px";
+            Prompt.isOpen = false;
+            const promptDropDown = document.querySelector('.promptDropDown');
+            if (this.isOpen) {
+                promptDropDown.style.width = "70%";
+                promptDropDown.style.top = "15%";
+                promptDropDown.style.left = "15%";
+            } else {
+                promptDropDown.style.width = "0px";
+                promptDropDown.style.top = "0px";
+                promptDropDown.style.left = "0px";
+            }
         },
     },
 
     createPromptDisplayTable() {
         const table = document.createElement("table");
         table.className = "table prompt";
-    
+
         // Header row for questions
         const header = document.createElement("tr");
         const th = document.createElement("th");
@@ -40,16 +48,13 @@ const Prompt = {
         th.innerText = "Answer the Questions Below:";
         header.appendChild(th);
         table.appendChild(header);
-    
+
         return table;
     },
-    
-    
 
     toggleDetails() {
-        Prompt.detailed = !Prompt.detailed
-
-        Prompt.updatePromptDisplay()
+        Prompt.detailed = !Prompt.detailed;
+        Prompt.updatePromptDisplay();
     },
 
     updatePromptTable() {
@@ -100,6 +105,7 @@ const Prompt = {
         container.appendChild(table);
         return container;
     },
+
     handleSubmit() {
         // Collect all answers
         const inputs = document.querySelectorAll("input[type='text']");
@@ -113,78 +119,70 @@ const Prompt = {
         Prompt.isOpen = false;
         Prompt.backgroundDim.remove();
     },
-    
-    
-    updatePromptDisplay () {
-        const table = document.getElementsByClassName("table scores")[0]
-        const detailToggleSection = document.getElementById("detail-toggle-section")
-        const clearButtonRow = document.getElementById("clear-button-row")
-        const pagingButtonsRow = document.getElementById("paging-buttons-row")
+
+    updatePromptDisplay() {
+        const table = document.getElementsByClassName("table scores")[0];
+        const detailToggleSection = document.getElementById("detail-toggle-section");
+        const clearButtonRow = document.getElementById("clear-button-row");
+        const pagingButtonsRow = document.getElementById("paging-buttons-row");
 
         if (detailToggleSection) {
-            detailToggleSection.remove()
+            detailToggleSection.remove();
         }
 
         if (table) {
-            table.remove() //remove old table if it is there
+            table.remove(); //remove old table if it is there
         }
 
         if (pagingButtonsRow) {
-            pagingButtonsRow.remove()
+            pagingButtonsRow.remove();
         }
 
         if (clearButtonRow) {
-            clearButtonRow.remove()
+            clearButtonRow.remove();
         }
 
-        
-        document.getElementById("promptDropDown").append(Prompt.updatePromptTable()) //update new Prompt
-        
-        
+        document.getElementById("promptDropDown").append(Prompt.updatePromptTable()); //update new Prompt
     },
 
-    backPage () {
-        const table = document.getElementsByClassName("table scores")[0]
+    backPage() {
+        const table = document.getElementsByClassName("table scores")[0];
 
         if (Prompt.currentPage - 1 == 0) {
             return;
         }
-    
 
-        Prompt.currentPage -= 1
-
-        Prompt.updatePromptDisplay()
-    },
-    
-    frontPage () {
-        Prompt.currentPage += 1
-        Prompt.updatePromptDisplay()
-        
+        Prompt.currentPage -= 1;
+        Prompt.updatePromptDisplay();
     },
 
-    openPromptPanel(npc) {
+    frontPage() {
+        Prompt.currentPage += 1;
+        Prompt.updatePromptDisplay();
+    },
+
+    openPromptPanel(content, callback) {
         const promptDropDown = document.querySelector('.promptDropDown');
         const promptTitle = document.getElementById("promptTitle");
-    
-        this.currentNpc = npc; // Assign the current NPC when opening the panel
-        promptTitle.innerHTML = npc.quiz.title || "Questions";
-    
+
+        promptTitle.innerHTML = content;
+
         // Toggle `isOpen` state
         this.isOpen = true;
-    
+
         // Handle the prompt drop-down visibility
         if (this.isOpen) {
             Prompt.backgroundDim.create();
-    
+
             // Remove old table if it exists
             const table = document.getElementsByClassName("table scores")[0];
             if (table) {
-                table.remove(); 
+                table.remove();
             }
-    
+
             // Update the prompt display with questions
             Prompt.updatePromptDisplay();
-    
+
             // Style the prompt drop-down
             promptDropDown.style.position = "fixed";
             promptDropDown.style.zIndex = "9999";
@@ -192,18 +190,106 @@ const Prompt = {
             promptDropDown.style.top = "15%";
             promptDropDown.style.left = "15%";
             promptDropDown.style.transition = "all 0.3s ease-in-out";
+
+            // Call the callback function after the prompt is closed
+            if (callback) {
+                callback();
+            }
         }
     },
 
-    
+    showCustomPrompt(message) {
+        let customAlert = document.getElementById("custom-alert");
+        let customAlertMessage = document.getElementById("custom-alert-message");
 
-    initializePrompt () {
+        // Create the custom alert elements if they do not exist
+        if (!customAlert) {
+            customAlert = document.createElement("div");
+            customAlert.id = "custom-alert";
+            customAlert.style.position = "fixed";
+            customAlert.style.top = "50%";
+            customAlert.style.left = "50%";
+            customAlert.style.transform = "translate(-50%, -50%)";
+            customAlert.style.backgroundColor = "white";
+            customAlert.style.padding = "20px";
+            customAlert.style.border = "1px solid black";
+            customAlert.style.zIndex = "10000";
+            customAlert.style.display = "none";
+
+            customAlertMessage = document.createElement("div");
+            customAlertMessage.id = "custom-alert-message";
+            customAlert.appendChild(customAlertMessage);
+
+            document.body.appendChild(customAlert);
+        }
+
+        customAlertMessage.innerText = message;
+        customAlert.style.display = "block";
+        setTimeout(() => {
+            customAlert.style.display = "none";
+        }, 3000); // Display for 3 seconds
+    },
+
+    showDialogueOptions(options, callback) {
+        let customPrompt = document.getElementById("custom-prompt");
+        let customPromptMessage = document.getElementById("custom-prompt-message");
+        let customPromptInput = document.getElementById("custom-prompt-input");
+        let customPromptSubmit = document.getElementById("custom-prompt-submit");
+
+        // Create the custom prompt elements if they do not exist
+        if (!customPrompt) {
+            customPrompt = document.createElement("div");
+            customPrompt.id = "custom-prompt";
+            customPrompt.style.position = "fixed";
+            customPrompt.style.top = "50%";
+            customPrompt.style.left = "50%";
+            customPrompt.style.transform = "translate(-50%, -50%)";
+            customPrompt.style.backgroundColor = "white";
+            customPrompt.style.padding = "20px";
+            customPrompt.style.border = "1px solid black";
+            customPrompt.style.zIndex = "10000";
+            customPrompt.style.display = "none";
+
+            customPromptMessage = document.createElement("div");
+            customPromptMessage.id = "custom-prompt-message";
+            customPrompt.appendChild(customPromptMessage);
+
+            customPromptInput = document.createElement("input");
+            customPromptInput.id = "custom-prompt-input";
+            customPromptInput.type = "number";
+            customPromptInput.min = "1";
+            customPromptInput.max = "4";
+            customPrompt.appendChild(customPromptInput);
+
+            customPromptSubmit = document.createElement("button");
+            customPromptSubmit.id = "custom-prompt-submit";
+            customPromptSubmit.innerText = "Submit";
+            customPrompt.appendChild(customPromptSubmit);
+
+            document.body.appendChild(customPrompt);
+        }
+
+        customPromptMessage.innerHTML = options.map((option, index) => `<p>${index + 1}. ${option}</p>`).join("");
+        customPrompt.style.display = "block";
+
+        customPromptSubmit.onclick = () => {
+            const choice = parseInt(customPromptInput.value, 10);
+            if (choice >= 1 && choice <= 4) {
+                customPrompt.style.display = "none";
+                callback(choice);
+            } else {
+                alert("Please enter a number between 1 and 4.");
+            }
+        };
+    },
+
+    initializePrompt() {
         const promptTitle = document.createElement("div");
         promptTitle.id = "promptTitle";
         document.getElementById("promptDropDown").appendChild(promptTitle);
         // document.getElementById("promptDropDown").append(this.updatePromptTable())
 
-       // document.getElementById("prompt-button").addEventListener("click",Prompt.openPromptPanel)
+        // document.getElementById("prompt-button").addEventListener("click",Prompt.openPromptPanel)
     },
 
     shuffleArray(array) {

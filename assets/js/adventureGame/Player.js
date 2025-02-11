@@ -27,9 +27,10 @@ class Player extends Character {
         this.keypress = data?.keypress || {up: 87, left: 65, down: 83, right: 68};
         this.velocity = { x: 0, y: 0 };
         this.position = {
-            x: (GameEnv.innerWidth - (data?.pixels?.width || 0)) / 2,
+            x: (GameEnv.innerWidth - (data?.pixels?.width || 0)) / 2 + 150, // Move the player 150 pixels to the right
             y: GameEnv.innerHeight - (data?.pixels?.height || 0)
         };
+        this.hasGreeted = false;
         this.bindEventListeners();
     }
 
@@ -135,11 +136,31 @@ class Player extends Character {
         // Check collision with NPC only
         const npc = GameEnv.gameObjects.find(obj => obj instanceof Npc);
         if (npc && this.isCollidingWithArea(npc)) {
-            // Handle collision (e.g., stop movement)
+            if (!this.hasGreeted) {
+                this.hasGreeted = true; // Prevents repeated triggers
+                npc.shareGreeting();
+            }
+            // Stop movement upon collision
             this.position.x -= this.velocity.x;
             this.position.y -= this.velocity.y;
             this.velocity.x = 0;
             this.velocity.y = 0;
+        } else {
+            this.hasGreeted = false; // Reset when no longer colliding
+        }
+
+        // Check collision with defined collision areas
+        if (GameEnv.collisionAreas) {
+            for (const collisionArea of GameEnv.collisionAreas) {
+                if (this.isCollidingWithArea(collisionArea)) {
+                    // Stop movement upon collision
+                    this.position.x -= this.velocity.x;
+                    this.position.y -= this.velocity.y;
+                    this.velocity.x = 0;
+                    this.velocity.y = 0;
+                    break;
+                }
+            }
         }
 
         if (this.position.x + this.width > GameEnv.innerWidth) {

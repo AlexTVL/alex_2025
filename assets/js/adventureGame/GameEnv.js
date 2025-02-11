@@ -26,14 +26,16 @@ class GameEnv {
     static gameObjects = [];
     static continueLevel = true;
     static canvas;
-    static ctx;
-    static innerWidth;
-    static innerHeight;
+    static ctx = document.getElementById('gameCanvas').getContext('2d');
+    static innerWidth = window.innerWidth;
+    static innerHeight = window.innerHeight;
     static top;
     static bottom;
     static timerActive = false;
     static timerInterval = 10;
     static time = 0;
+    
+    
     
     /**
      * Private constructor to prevent instantiation.
