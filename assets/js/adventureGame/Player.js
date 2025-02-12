@@ -1,6 +1,7 @@
 import GameEnv from './GameEnv.js';
 import Character from './Character.js';
 import Npc from './Npc.js';
+import Prompt from './Prompt.js'; // Import the Prompt module
 
 // Define non-mutable constants as defaults
 const SCALE_FACTOR = 25; // 1/nth of the height of the canvas
@@ -161,6 +162,11 @@ class Player extends Character {
                     break;
                 }
             }
+        }
+
+        // Check if player is in the exact bottom right corner
+        if (this.position.x + this.width >= GameEnv.innerWidth && this.position.y + this.height >= GameEnv.innerHeight) {
+            Prompt.showCustomPrompt("There was a HOLE here. It's gone now");
         }
 
         if (this.position.x + this.width > GameEnv.innerWidth) {
