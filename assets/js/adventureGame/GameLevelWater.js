@@ -60,9 +60,9 @@ class GameLevelWater {
         // Define collision areas for the four corners
         GameEnv.collisionAreas = [
             { position: { x: 0, y: 0 }, width: 500, height: 100 }, // Top-left corner
-            { position: { x: width - 200, y: 0 }, width: 400, height: 100 }, // Top-right corner
-            { position: { x: 0, y: height - 200 }, width: 500, height: 800 }, // Bottom-left corner
-            { position: { x: width - 200, y: height - 200 }, width: 200, height: 600 } // Bottom-right corner
+            { position: { x: width - 450, y: 0 }, width: 400, height: 100 }, // Top-right corner
+            { position: { x: 0, y: height - 250 }, width: 500, height: 200 }, // Bottom-left corner
+            { position: { x: width - 300, y: height - 200 }, width: 400, height: 600 } // Bottom-right corner
         ];
 
         GameEnv.gameObjects.push(new Background(image_data_background));
