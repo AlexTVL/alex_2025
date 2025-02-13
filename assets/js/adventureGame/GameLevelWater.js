@@ -3,6 +3,8 @@ import Background from './Background.js';
 import Npc from './Npc.js';
 import Character from './Character.js';
 import Player from './Player.js';
+import Collectible from './Collectibles.js'; // Import the Collectible class
+import { updateCollectiblesRemaining } from './StatsManager.js'; // Import the updateCollectiblesRemaining function
 
 class GameLevelWater {
     constructor(path) {
@@ -67,17 +69,75 @@ class GameLevelWater {
 
         GameEnv.gameObjects.push(new Background(image_data_background));
         GameEnv.gameObjects.push(new Player(sprite_data_ninja));
-        GameEnv.gameObjects.push(new Npc(sprite_data_bird));
+        const npc = new Npc(sprite_data_bird);
+        GameEnv.gameObjects.push(npc);
+
+        // Add collectibles (initially hidden)
+        const sprite_src_collectible = path + "/images/gamify/catFood.png"; // be sure to include the path
+        const COLLECTIBLE_SCALE_FACTOR = 10;
+        const collectiblePositions = [
+            { x: width / 2, y: height / 2 },
+            { x: width / 4, y: height / 4 },
+            { x: (3 * width) / 4, y: height / 4 },
+            { x: width / 2, y: 50 } // Move the bottom collectible to the top middle
+        ];
+
+        this.collectibles = collectiblePositions.map(position => {
+            const sprite_data_collectible = {
+                id: 'Collectible',
+                src: sprite_src_collectible,
+                SCALE_FACTOR: COLLECTIBLE_SCALE_FACTOR,
+                STEP_FACTOR: 1000,
+                ANIMATION_RATE: 10,
+                INIT_POSITION: position,
+                pixels: { height: 128, width: 164 },
+                orientation: { rows: 1, columns: 1 },
+                down: { row: 0, start: 0, columns: 1 }, // Ensure direction data is defined
+                hitbox: { widthPercentage: 0.5, heightPercentage: 0.5 }
+            };
+            return new Collectible(sprite_data_collectible);
+        });
 
         // List of objects definitions for this level
         this.objects = [
             { class: Background, data: image_data_background },
             { class: Player, data: sprite_data_ninja },
-            { class: Npc, data: sprite_data_bird },
+            { class: Npc, data: sprite_data_bird }
         ];
 
         GameEnv.currentLevel = this;
         console.log("GameLevelWater initialized with objects:", this.objects);
+
+        // Add interaction with NPC to reveal collectibles
+        npc.interact = () => {
+            this.collectibles.forEach(collectible => {
+                GameEnv.gameObjects.push(collectible);
+            });
+            this.updateCollectiblesRemainingDisplay();
+        };
+
+        // Update collectibles remaining
+        this.updateCollectiblesRemainingDisplay();
+    }
+
+    updateCollectiblesRemainingDisplay() {
+        const collectiblesRemaining = this.collectibles.filter(collectible => !collectible.collected).length;
+        const collectiblesRemainingElement = document.getElementById('collectibles-remaining');
+        if (collectiblesRemainingElement) {
+            collectiblesRemainingElement.innerText = `Collectibles Remaining: ${collectiblesRemaining}`;
+        } else {
+            const newElement = document.createElement('div');
+            newElement.id = 'collectibles-remaining';
+            newElement.innerText = `Collectibles Remaining: ${collectiblesRemaining}`;
+            newElement.style.position = 'absolute';
+            newElement.style.top = '10px';
+            newElement.style.right = '10px';
+            newElement.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+            newElement.style.color = 'white';
+            newElement.style.padding = '5px';
+            newElement.style.borderRadius = '5px';
+            document.body.appendChild(newElement);
+        }
     }
 }
 

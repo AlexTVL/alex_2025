@@ -1,7 +1,9 @@
 import GameEnv from './GameEnv.js';
 import Character from './Character.js';
 import Npc from './Npc.js';
+import Collectible from './Collectibles.js'; // Import the Collectible class
 import Prompt from './Prompt.js'; // Import the Prompt module
+import { updateCollectiblesRemaining } from './StatsManager.js'; // Import the updateCollectiblesRemaining function
 
 // Define non-mutable constants as defaults
 const SCALE_FACTOR = 25; // 1/nth of the height of the canvas
@@ -164,9 +166,16 @@ class Player extends Character {
             }
         }
 
+        // Check collision with collectibles
+        const collectible = GameEnv.gameObjects.find(obj => obj instanceof Collectible && !obj.collected);
+        if (collectible && this.isCollidingWithArea(collectible)) {
+            collectible.collect();
+            updateCollectiblesRemaining();
+        }
+
         // Check if player is in the exact bottom right corner
         if (this.position.x + this.width >= GameEnv.innerWidth && this.position.y + this.height >= GameEnv.innerHeight) {
-            Prompt.showCustomPrompt("There was a HOLE here. It's gone now");
+            Prompt.showCustomPrompt("You have reached the bottom right corner!");
         }
 
         if (this.position.x + this.width > GameEnv.innerWidth) {

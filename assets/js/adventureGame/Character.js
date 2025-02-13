@@ -48,7 +48,7 @@ class Character extends GameObject {
         this.state = {
             ...this.state,
             animation: 'idle',
-            direction: 'right',
+            direction: 'down',
             isDying: false,
             isFinishing: false,
         }; // Object control data
@@ -98,9 +98,7 @@ class Character extends GameObject {
 
         // Set the initial size and velocity of the object
         this.resize();
-
     }
-
 
     /**
      * Draws the object on the canvas.
@@ -115,6 +113,11 @@ class Character extends GameObject {
     
             // Sprite Sheet direction data source (e.g., front, left, right, back)
             const directionData = this.spriteData[this.direction];
+    
+            if (!directionData) {
+                console.error('Direction data is not properly defined');
+                return;
+            }
     
             // Sprite Sheet x and y declarations to store coordinates of current frame
             let frameX, frameY;

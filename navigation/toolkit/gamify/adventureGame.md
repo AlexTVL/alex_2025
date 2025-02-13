@@ -85,9 +85,7 @@ permalink: /gamify/adventureGame
 </div>
 
 <div id="stats-container" style="position: absolute; top: 120px; left: 10px; background-color: rgba(0, 0, 0, 0.7); color: white; padding: 10px; border-radius: 5px;">
-    <div>Balance: <span id="balance">0</span></div>
-    <div>Chat Score: <span id="chatScore">0</span></div>
-    <div>Questions Answered: <span id="questionsAnswered">0</span></div>
+    <div>Collectibles Remaining: <span id="collectiblesRemaining">4</span></div>
     
     <!-- NPC Tracker Button added below the stats -->
     <button id="npcTrackerButton">NPC Tracker</button>
@@ -107,7 +105,7 @@ permalink: /gamify/adventureGame
 <script type="module">
     import GameControl from '{{site.baseurl}}/assets/js/adventureGame/GameControl.js';
     import Prompt from '{{site.baseurl}}/assets/js/adventureGame/Prompt.js';
-    import { getStats } from '{{site.baseurl}}/assets/js/adventureGame/StatsManager.js';
+    import { updateCollectiblesRemaining } from '{{site.baseurl}}/assets/js/adventureGame/StatsManager.js';
 
     const path = "{{site.baseurl}}";
     GameControl.start(path);
@@ -119,7 +117,7 @@ permalink: /gamify/adventureGame
     window.closeCustomPrompt = closeCustomPrompt;
 
     window.onload = function() {
-        getStats();
+        updateCollectiblesRemaining();
     };
 </script>
 
