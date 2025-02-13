@@ -1,5 +1,6 @@
 import GameEnv from './GameEnv.js';
 import Character from './Character.js';
+import * as StatsManager from './StatsManager.js'; // Import the entire StatsManager module
 
 class Collectible extends Character {
     constructor(data) {
@@ -14,7 +15,7 @@ class Collectible extends Character {
         this.collected = true;
         this.destroy(); // Use the destroy function to remove the collectible from the screen
         console.log(`${this.spriteData.id} collected!`);
-        updateCollectiblesRemaining(); // Update the collectibles remaining display
+        StatsManager.updateCollectiblesRemaining(); // Update the collectibles remaining display
     }
 
     update() {

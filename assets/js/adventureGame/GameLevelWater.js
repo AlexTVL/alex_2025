@@ -4,7 +4,7 @@ import Npc from './Npc.js';
 import Character from './Character.js';
 import Player from './Player.js';
 import Collectible from './Collectibles.js'; // Import the Collectible class
-import { updateCollectiblesRemaining } from './StatsManager.js'; // Import the updateCollectiblesRemaining function
+import * as StatsManager from './StatsManager.js'; // Import the entire StatsManager module
 
 class GameLevelWater {
     constructor(path) {
