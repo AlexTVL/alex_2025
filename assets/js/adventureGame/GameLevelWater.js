@@ -47,7 +47,7 @@ class GameLevelWater {
         const BIRD_SCALE_FACTOR = 10;
         const sprite_data_bird = {
             id: 'BirdCat',
-            greeting: "Chirp! Chirp! There's cat food around here, but watch out for the Face!",
+            greeting: "Chirp! Chirp! There's cat food around here, but watch out for the Face! Press R to reveal the cat food, the order to collect them in is top, left, right, and down.",
             src: sprite_src_bird,
             SCALE_FACTOR: BIRD_SCALE_FACTOR,
             STEP_FACTOR: 1000,
@@ -72,31 +72,28 @@ class GameLevelWater {
         const npc = new Npc(sprite_data_bird);
         GameEnv.gameObjects.push(npc);
 
-        // Add collectibles (initially hidden)
+        // Collectibles data (initially hidden)
         const sprite_src_collectible = path + "/images/gamify/catFood.png"; // be sure to include the path
         const COLLECTIBLE_SCALE_FACTOR = 10;
         const collectiblePositions = [
-            { x: width / 2, y: height / 2 },
-            { x: width / 4, y: height / 4 },
+            { x: width / 2, y: height / 4 - 100 }, // Move the top collectible higher
+            { x: width / 4 - 50, y: height / 4 }, // Move the left collectible lefter
             { x: (3 * width) / 4, y: height / 4 },
-            { x: width / 2, y: 50 } // Move the bottom collectible to the top middle
+            { x: width / 2, y: height - 100 } // Move the bottom collectible lower
         ];
 
-        this.collectibles = collectiblePositions.map(position => {
-            const sprite_data_collectible = {
-                id: 'Collectible',
-                src: sprite_src_collectible,
-                SCALE_FACTOR: COLLECTIBLE_SCALE_FACTOR,
-                STEP_FACTOR: 1000,
-                ANIMATION_RATE: 10,
-                INIT_POSITION: position,
-                pixels: { height: 128, width: 164 },
-                orientation: { rows: 1, columns: 1 },
-                down: { row: 0, start: 0, columns: 1 }, // Ensure direction data is defined
-                hitbox: { widthPercentage: 0.5, heightPercentage: 0.5 }
-            };
-            return new Collectible(sprite_data_collectible);
-        });
+        this.collectiblesData = collectiblePositions.map(position => ({
+            id: 'Collectible',
+            src: sprite_src_collectible,
+            SCALE_FACTOR: COLLECTIBLE_SCALE_FACTOR,
+            STEP_FACTOR: 1000,
+            ANIMATION_RATE: 10,
+            INIT_POSITION: position,
+            pixels: { height: 128, width: 164 },
+            orientation: { rows: 1, columns: 1 },
+            down: { row: 0, start: 0, columns: 1 }, // Ensure direction data is defined
+            hitbox: { widthPercentage: 0.5, heightPercentage: 0.5 }
+        }));
 
         // List of objects definitions for this level
         this.objects = [
@@ -108,20 +105,32 @@ class GameLevelWater {
         GameEnv.currentLevel = this;
         console.log("GameLevelWater initialized with objects:", this.objects);
 
-        // Add interaction with NPC to reveal collectibles
-        npc.interact = () => {
-            this.collectibles.forEach(collectible => {
-                GameEnv.gameObjects.push(collectible);
-            });
-            this.updateCollectiblesRemainingDisplay();
-        };
+        // Add event listener for the "R" key to reveal collectibles
+        addEventListener('keydown', this.handleKeyDown.bind(this));
 
         // Update collectibles remaining
         this.updateCollectiblesRemainingDisplay();
     }
 
+    handleKeyDown(event) {
+        if (event.key === 'r' || event.key === 'R') {
+            if (!this.collectiblesInitialized) {
+                this.initializeCollectibles();
+                this.collectiblesInitialized = true;
+            }
+            this.updateCollectiblesRemainingDisplay();
+        }
+    }
+
+    initializeCollectibles() {
+        this.collectibles = this.collectiblesData.map(data => new Collectible(data));
+        this.collectibles.forEach(collectible => {
+            GameEnv.gameObjects.push(collectible);
+        });
+    }
+
     updateCollectiblesRemainingDisplay() {
-        const collectiblesRemaining = this.collectibles.filter(collectible => !collectible.collected).length;
+        const collectiblesRemaining = this.collectibles ? this.collectibles.filter(collectible => !collectible.collected).length : 0;
         const collectiblesRemainingElement = document.getElementById('collectibles-remaining');
         if (collectiblesRemainingElement) {
             collectiblesRemainingElement.innerText = `Collectibles Remaining: ${collectiblesRemaining}`;

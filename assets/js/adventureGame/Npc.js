@@ -95,10 +95,8 @@ class Npc extends Character {
     handleDialogueResponse(choice) {
         const response = this.responses[choice - 1];
         Prompt.showCustomPrompt(response);
-        if (choice === 1) { // Assuming choice 1 reveals the collectibles
-            if (this.interact) {
-                this.interact();
-            }
+        if (this.interact) {
+            this.interact();
         }
     }
 
