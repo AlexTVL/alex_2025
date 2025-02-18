@@ -47,7 +47,7 @@ class GameLevelWater {
         const BIRD_SCALE_FACTOR = 10;
         const sprite_data_bird = {
             id: 'BirdCat',
-            greeting: "Chirp! Chirp! There's cat food around here, but watch out for the Face! Press R to reveal the cat food, the order to collect them in is top, left, right, and down.",
+            greeting: "Chirp! Chirp! There's cat food around here, but watch out for the Face! Press R to reveal the cat food, by the way, the order to collect them in is top, left, right, and down.",
             src: sprite_src_bird,
             SCALE_FACTOR: BIRD_SCALE_FACTOR,
             STEP_FACTOR: 1000,
