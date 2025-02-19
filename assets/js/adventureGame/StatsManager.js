@@ -73,10 +73,10 @@ function displayMoveToMiddleText() {
     moveToMiddleText.style.fontSize = '24px';
     document.body.appendChild(moveToMiddleText);
 
-    // Remove the text after 5 seconds
+    // Remove the text after 3 seconds
     setTimeout(() => {
         moveToMiddleText.remove();
-    }, 5000);
+    }, 3000);
 }
 
 /**
