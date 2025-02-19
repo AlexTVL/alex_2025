@@ -16,6 +16,7 @@ class Collectible extends Character {
         this.destroy(); // Use the destroy function to remove the collectible from the screen
         console.log(`${this.spriteData.id} collected!`);
         StatsManager.updateCollectiblesRemaining(); // Update the collectibles remaining display
+        StatsManager.updateCollectiblesCollected(); // Update the collectibles collected display
     }
 
     update() {
