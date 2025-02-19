@@ -66,6 +66,7 @@ const Prompt = {
                 // Question cell
                 const questionCell = document.createElement("td");
                 questionCell.innerText = `${index + 1}. ${question}`;
+                questionCell.style.color = '#333'; // Make the text darker
                 row.appendChild(questionCell);
                 // Input cell
                 const inputCell = document.createElement("td");
@@ -198,7 +199,7 @@ const Prompt = {
         }
     },
 
-    showCustomPrompt(message) {
+    showCustomPrompt(message, top = '50%', left = '50%') {
         let customAlert = document.getElementById("custom-alert");
         let customAlertMessage = document.getElementById("custom-alert-message");
 
@@ -207,8 +208,8 @@ const Prompt = {
             customAlert = document.createElement("div");
             customAlert.id = "custom-alert";
             customAlert.style.position = "fixed";
-            customAlert.style.top = "50%";
-            customAlert.style.left = "50%";
+            customAlert.style.top = top;
+            customAlert.style.left = left;
             customAlert.style.transform = "translate(-50%, -50%)";
             customAlert.style.backgroundColor = "white";
             customAlert.style.padding = "20px";

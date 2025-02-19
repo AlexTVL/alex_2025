@@ -1,6 +1,7 @@
 import GameEnv from './GameEnv.js';
 import Collectible from './Collectibles.js'; // Import the Collectible class
 import Npc from './Npc.js'; // Import the Npc class
+import Prompt from './Prompt.js'; // Import the Prompt module
 
 /**
  * Updates the display of collectibles remaining.
@@ -52,6 +53,7 @@ export function updateCollectiblesCollected() {
     if (collectiblesCollected === totalCollectibles) {
         displayMoveToMiddleText();
         triggerBirdNpcFlyOff();
+        displayWaitText();
     }
 }
 
@@ -63,7 +65,7 @@ function displayMoveToMiddleText() {
     moveToMiddleText.id = 'move-to-middle-text';
     moveToMiddleText.innerText = 'Move to the middle of the screen!';
     moveToMiddleText.style.position = 'absolute';
-    moveToMiddleText.style.top = '50%';
+    moveToMiddleText.style.top = '60%'; // Move the text lower
     moveToMiddleText.style.left = '50%';
     moveToMiddleText.style.transform = 'translate(-50%, -50%)';
     moveToMiddleText.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
@@ -76,6 +78,18 @@ function displayMoveToMiddleText() {
     // Remove the text after 3 seconds
     setTimeout(() => {
         moveToMiddleText.remove();
+    }, 3000);
+}
+
+/**
+ * Displays temporary text in the same location as the NPC interaction saying "Wait! Where are you going?".
+ */
+function displayWaitText() {
+    Prompt.showCustomPrompt('Wait! Where are you going?', '60%', '60%'); // Adjust the position
+
+    // Remove the text after 3 seconds
+    setTimeout(() => {
+        Prompt.closeCustomPrompt();
     }, 3000);
 }
 
