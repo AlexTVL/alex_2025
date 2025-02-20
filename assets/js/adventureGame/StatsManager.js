@@ -124,9 +124,8 @@ function initializeFaceNpc() {
         left: { start: 1, row: 0, columns: 3 },
         right: { start: 1, row: 0, columns: 3 },
         flyOff: function() {
-            this.velocity = { x: 5000, y: 0 }; // Set very high velocity for fast movement
             const interval = setInterval(() => {
-                this.position.x += this.velocity.x / 60; // Update position based on velocity
+                this.position.x += 50; // Increase position increment for faster movement
                 if (this.position.x > GameEnv.innerWidth) {
                     clearInterval(interval);
                     this.destroy(); // Remove the NPC from the game environment
