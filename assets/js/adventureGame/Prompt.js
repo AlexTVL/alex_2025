@@ -231,6 +231,13 @@ const Prompt = {
         }, 3000); // Display for 3 seconds
     },
 
+    closeCustomPrompt() {
+        const customAlert = document.getElementById("custom-alert");
+        if (customAlert) {
+            customAlert.style.display = "none";
+        }
+    },
+
     showDialogueOptions(options, callback) {
         let customPrompt = document.getElementById("custom-prompt");
         let customPromptMessage = document.getElementById("custom-prompt-message");

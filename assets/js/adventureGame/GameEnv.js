@@ -1,27 +1,3 @@
-/**
- * GameEnv is a static class that manages the game environment.
- * 
- * The focus of the file is the canvas management and the calculation of the game area dimensions. 
- * All calculations are based on the window size, header, and footer.
- * 
- * This code uses a classic Java static class pattern, which is nice for managing centralized data.
- * 
- * The static class pattern ensures that there is only one instance of the game environment,
- * providing a single point of reference for all game objects. This approach helps maintain
- * consistency and simplifies the management of shared resources like the canvas and its dimensions.
- * 
- * @class GameEnv
- * @property {Array} gameObjects - An array of game objects for the current level.
- * @property {Object} canvas - The canvas element.
- * @property {Object} ctx - The 2D rendering context of the canvas.
- * @property {number} innerWidth - The inner width of the game area.
- * @property {number} innerHeight - The inner height of the game area.
- * @property {number} top - The top offset of the game area.
- * @property {number} bottom - The bottom offset of the game area.
- * @property {boolean} timerActive - Flag to indicate if the timer is active.
- * @property {number} timerInterval - The interval for the timer.
- * @property {number} time - The current time.
- */
 class GameEnv {
     static gameObjects = [];
     static continueLevel = true;
@@ -34,9 +10,7 @@ class GameEnv {
     static timerActive = false;
     static timerInterval = 10;
     static time = 0;
-    
-    
-    
+
     /**
      * Private constructor to prevent instantiation.
      * 

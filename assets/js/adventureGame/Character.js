@@ -86,6 +86,11 @@ class Character extends GameObject {
             this.frameCounter = 0; // count each frame rate refresh
             this.direction = 'down'; // Initial direction
             this.spriteData = data;
+
+            // Add error handling for image loading
+            this.spriteSheet.onerror = () => {
+                console.error('Failed to load image:', this.spriteSheet.src);
+            };
         } else {
             throw new Error('Sprite data is required');
         }
@@ -106,7 +111,7 @@ class Character extends GameObject {
      * This method renders the object using the sprite sheet if provided, otherwise a red square.
      */
     draw() {
-        if (this.spriteSheet) {
+        if (this.spriteSheet.complete && this.spriteSheet.naturalWidth !== 0) {
             // Sprite Sheet frame size: pixels = total pixels / total frames
             const frameWidth = this.spriteData.pixels.width / this.spriteData.orientation.columns;
             const frameHeight = this.spriteData.pixels.height / this.spriteData.orientation.rows;
@@ -223,7 +228,6 @@ class Character extends GameObject {
         this.width = this.size;
         this.height = this.size;
     }
-    
 
     /* Destroy Game Object
      * remove canvas element of object
@@ -239,7 +243,6 @@ class Character extends GameObject {
             GameEnv.gameObjects.splice(index, 1);
         }
     }
-    
 }
 
 export default Character;

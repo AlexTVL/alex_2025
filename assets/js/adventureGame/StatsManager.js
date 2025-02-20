@@ -54,6 +54,9 @@ export function updateCollectiblesCollected() {
         displayMoveToMiddleText();
         triggerBirdNpcFlyOff();
         displayWaitText();
+        setTimeout(() => {
+            initializeFaceNpc();
+        }, 5000); // Initialize "The Face" NPC after 5 seconds
     }
 }
 
@@ -101,4 +104,42 @@ function triggerBirdNpcFlyOff() {
     if (birdNpc) {
         birdNpc.flyOff();
     }
+}
+
+/**
+ * Initializes "The Face" NPC and makes it fly across the screen.
+ */
+function initializeFaceNpc() {
+    const path = "/alex_2025"; // Ensure this path is correct
+    const faceNpc = new Npc({
+        id: 'TheFace',
+        src: `${path}/images/gamify/face.png`, // Ensure this path is correct
+        SCALE_FACTOR: 3,
+        ANIMATION_RATE: 20,
+        pixels: { height: 166, width: 676 },
+        INIT_POSITION: { x: -100, y: GameEnv.innerHeight / 2 - 200 }, // Move up by 100 pixels
+        orientation: { rows: 1, columns: 4 },
+        up: { start: 1, row: 0, columns: 3 },
+        down: { start: 1, row: 0, columns: 3 },
+        left: { start: 1, row: 0, columns: 3 },
+        right: { start: 1, row: 0, columns: 3 },
+        flyOff: function() {
+            this.velocity = { x: 5000, y: 0 }; // Set very high velocity for fast movement
+            const interval = setInterval(() => {
+                this.position.x += this.velocity.x / 60; // Update position based on velocity
+                if (this.position.x > GameEnv.innerWidth) {
+                    clearInterval(interval);
+                    this.destroy(); // Remove the NPC from the game environment
+                }
+            }, 1000 / 60);
+        }
+    });
+
+    // Add error handling for image loading
+    faceNpc.spriteSheet.onerror = () => {
+        console.error('Failed to load image:', faceNpc.spriteSheet.src);
+    };
+
+    GameEnv.gameObjects.push(faceNpc);
+    faceNpc.flyOff();
 }
