@@ -13,12 +13,14 @@ class Player extends Character {
      */
     constructor(data = null) {
         super(data);
-        this.keypress = data?.keypress || {up: 87, left: 65, down: 83, right: 68};
+        this.keypress = data?.keypress || { up: 87, left: 65, down: 83, right: 68 };
         this.velocity = { x: 0, y: 0 };
         this.position = {
             x: (GameEnv.innerWidth - (data?.pixels?.width || 0)) / 2 + 150, // Move the player 150 pixels to the right
             y: GameEnv.innerHeight - (data?.pixels?.height || 0)
         };
+        this.yVelocity = 1.2 * (data?.yVelocity || 1); // Adjust the yVelocity to be slower than the current y-speed
+        this.xVelocity = this.yVelocity; // Set the xVelocity to be the same as the yVelocity
         this.hasGreeted = false;
         this.bindEventListeners();
     }
@@ -44,22 +46,23 @@ class Player extends Character {
     handleKeyDown({ keyCode }) {
         switch (keyCode) {
             case this.keypress.up:
-                this.velocity.y -= this.yVelocity;
+                this.velocity.y = -this.yVelocity;
                 this.direction = 'up';
                 break;
             case this.keypress.left:
-                this.velocity.x -= this.xVelocity;
+                this.velocity.x = -this.xVelocity;
                 this.direction = 'left';
                 break;
             case this.keypress.down:
-                this.velocity.y += this.yVelocity;
+                this.velocity.y = this.yVelocity;
                 this.direction = 'down';
                 break;
             case this.keypress.right:
-                this.velocity.x += this.xVelocity;
+                this.velocity.x = this.xVelocity;
                 this.direction = 'right';
                 break;
         }
+        console.log(`Key down: ${keyCode}, Velocity: ${JSON.stringify(this.velocity)}`);
     }
 
     /**
@@ -72,18 +75,15 @@ class Player extends Character {
     handleKeyUp({ keyCode }) {
         switch (keyCode) {
             case this.keypress.up:
-                this.velocity.y = 0;
-                break;
-            case this.keypress.left:
-                this.velocity.x = 0;
-                break;
             case this.keypress.down:
                 this.velocity.y = 0;
                 break;
+            case this.keypress.left:
             case this.keypress.right:
                 this.velocity.x = 0;
                 break;
         }
+        console.log(`Key up: ${keyCode}, Velocity: ${JSON.stringify(this.velocity)}`);
     }
 
     /**
@@ -95,6 +95,8 @@ class Player extends Character {
     update() {
         this.position.x += this.velocity.x;
         this.position.y += this.velocity.y;
+
+        console.log(`Position: ${JSON.stringify(this.position)}, Velocity: ${JSON.stringify(this.velocity)}`);
 
         // Check collision with NPC only
         const npc = GameEnv.gameObjects.find(obj => obj instanceof Npc);
@@ -140,7 +142,7 @@ class Player extends Character {
 
         if (this.position.x + this.width > GameEnv.innerWidth) {
             this.position.x = GameEnv.innerWidth - this.width;
-            this.velocity.x = 0; 
+            this.velocity.x = 0;
         }
         if (this.position.x < 0) {
             this.position.x = 0;

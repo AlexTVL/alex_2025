@@ -29,7 +29,10 @@ const GameControl = {
 
     start: function(path) {
         GameEnv.create();
-        this.levelClasses = [GameLevelDesert, GameLevelWater];
+        this.levelClasses = [
+            // GameLevelDesert, // Comment out this line to disable GameLevelDesert
+            GameLevelWater
+        ];
         this.currentLevelIndex = 0;
         this.path = path;
         this.addExitKeyListener();
