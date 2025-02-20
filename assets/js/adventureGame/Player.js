@@ -1,29 +1,15 @@
 import GameEnv from './GameEnv.js';
 import Character from './Character.js';
-import Npc from './Npc.js';
+import Npc from './Npc.js'; // Import the Npc class
 import Collectible from './Collectibles.js'; // Import the Collectible class
 import Prompt from './Prompt.js'; // Import the Prompt module
-import { updateCollectiblesRemaining } from './StatsManager.js'; // Import the updateCollectiblesRemaining function
+import * as StatsManager from './StatsManager.js'; // Import the entire StatsManager module
 
-// Define non-mutable constants as defaults
-const SCALE_FACTOR = 25; // 1/nth of the height of the canvas
-const STEP_FACTOR = 100; // 1/nth, or N steps up and across the canvas
-const ANIMATION_RATE = 1; // 1/nth of the frame rate
-
-/**
- * Player is a dynamic class that manages the data and events for objects like a player 
- * 
- * This class uses a classic Java class pattern which is nice for managing object data and events.
- * 
- * @method bindEventListeners - Binds key event listeners to handle object movement.
- * @method handleKeyDown - Handles key down events to change the object's velocity.
- * @method handleKeyUp - Handles key up events to stop the object's velocity.
- */
 class Player extends Character {
     /**
      * The constructor method is called when a new Player object is created.
      * 
-     * @param {Object|null} data - The sprite data for the object. If null, a default red square is used.
+     * @param {Object|null} data - The sprite data for the player. If null, a default red square is used.
      */
     constructor(data = null) {
         super(data);
@@ -38,16 +24,23 @@ class Player extends Character {
     }
 
     /**
-     * Binds key event listeners to handle object movement.
+     * Binds key event listeners to handle player movement.
      * 
-     * This method binds keydown and keyup event listeners to handle object movement.
-     * The .bind(this) method ensures that 'this' refers to the object object.
+     * This method binds keydown and keyup event listeners to handle player movement.
+     * The .bind(this) method ensures that 'this' refers to the player object.
      */
     bindEventListeners() {
         addEventListener('keydown', this.handleKeyDown.bind(this));
         addEventListener('keyup', this.handleKeyUp.bind(this));
     }
 
+    /**
+     * Handles key down events to change the player's velocity.
+     * 
+     * This method changes the player's velocity based on the key pressed.
+     * 
+     * @param {Object} event - The keydown event object.
+     */
     handleKeyDown({ keyCode }) {
         switch (keyCode) {
             case this.keypress.up:
@@ -84,13 +77,86 @@ class Player extends Character {
             case this.keypress.left:
                 this.velocity.x = 0;
                 break;
-            case this.keypress.down: 
+            case this.keypress.down:
                 this.velocity.y = 0;
                 break;
-            case this.keypress.right: 
+            case this.keypress.right:
                 this.velocity.x = 0;
                 break;
         }
+    }
+
+    /**
+     * Updates the player's position and ensures it stays within the canvas boundaries.
+     * 
+     * This method updates the player's position based on its velocity and ensures that the player
+     * stays within the canvas boundaries.
+     */
+    update() {
+        this.position.x += this.velocity.x;
+        this.position.y += this.velocity.y;
+
+        // Check collision with NPC only
+        const npc = GameEnv.gameObjects.find(obj => obj instanceof Npc);
+        if (npc && this.isCollidingWithArea(npc)) {
+            if (!this.hasGreeted) {
+                this.hasGreeted = true; // Prevents repeated triggers
+                npc.shareGreeting();
+            }
+            // Stop movement upon collision
+            this.position.x -= this.velocity.x;
+            this.position.y -= this.velocity.y;
+            this.velocity.x = 0;
+            this.velocity.y = 0;
+        } else {
+            this.hasGreeted = false; // Reset when no longer colliding
+        }
+
+        // Check collision with defined collision areas
+        if (GameEnv.collisionAreas) {
+            for (const collisionArea of GameEnv.collisionAreas) {
+                if (this.isCollidingWithArea(collisionArea)) {
+                    // Stop movement upon collision
+                    this.position.x -= this.velocity.x;
+                    this.position.y -= this.velocity.y;
+                    this.velocity.x = 0;
+                    this.velocity.y = 0;
+                    break;
+                }
+            }
+        }
+
+        // Check collision with collectibles
+        const collectible = GameEnv.gameObjects.find(obj => obj instanceof Collectible && !obj.collected);
+        if (collectible && this.isCollidingWithArea(collectible)) {
+            collectible.collect();
+            StatsManager.updateCollectiblesRemaining();
+        }
+
+        // Check if player is in the exact bottom right corner
+        if (this.position.x + this.width >= GameEnv.innerWidth && this.position.y + this.height >= GameEnv.innerHeight) {
+            Prompt.showCustomPrompt("You have reached the bottom right corner!");
+        }
+
+        if (this.position.x + this.width > GameEnv.innerWidth) {
+            this.position.x = GameEnv.innerWidth - this.width;
+            this.velocity.x = 0; 
+        }
+        if (this.position.x < 0) {
+            this.position.x = 0;
+            this.velocity.x = 0;
+        }
+        if (this.position.y + this.height > GameEnv.innerHeight) {
+            this.position.y = GameEnv.innerHeight - this.height;
+            this.velocity.y = 0;
+        }
+        if (this.position.y < 0) {
+            this.position.y = 0;
+            this.velocity.y = 0;
+        }
+
+        // Call the draw method to render the player
+        this.draw();
     }
 
     /**
@@ -132,73 +198,14 @@ class Player extends Character {
         }
     }
 
-    update() {
-        this.position.x += this.velocity.x;
-        this.position.y += this.velocity.y;
-
-        // Check collision with NPC only
-        const npc = GameEnv.gameObjects.find(obj => obj instanceof Npc);
-        if (npc && this.isCollidingWithArea(npc)) {
-            if (!this.hasGreeted) {
-                this.hasGreeted = true; // Prevents repeated triggers
-                npc.shareGreeting();
-            }
-            // Stop movement upon collision
-            this.position.x -= this.velocity.x;
-            this.position.y -= this.velocity.y;
-            this.velocity.x = 0;
-            this.velocity.y = 0;
-        } else {
-            this.hasGreeted = false; // Reset when no longer colliding
-        }
-
-        // Check collision with defined collision areas
-        if (GameEnv.collisionAreas) {
-            for (const collisionArea of GameEnv.collisionAreas) {
-                if (this.isCollidingWithArea(collisionArea)) {
-                    // Stop movement upon collision
-                    this.position.x -= this.velocity.x;
-                    this.position.y -= this.velocity.y;
-                    this.velocity.x = 0;
-                    this.velocity.y = 0;
-                    break;
-                }
-            }
-        }
-
-        // Check collision with collectibles
-        const collectible = GameEnv.gameObjects.find(obj => obj instanceof Collectible && !obj.collected);
-        if (collectible && this.isCollidingWithArea(collectible)) {
-            collectible.collect();
-            updateCollectiblesRemaining();
-        }
-
-        // Check if player is in the exact bottom right corner
-        if (this.position.x + this.width >= GameEnv.innerWidth && this.position.y + this.height >= GameEnv.innerHeight) {
-            Prompt.showCustomPrompt("You have reached the bottom right corner!");
-        }
-
-        if (this.position.x + this.width > GameEnv.innerWidth) {
-            this.position.x = GameEnv.innerWidth - this.width;
-            this.velocity.x = 0; 
-        }
-        if (this.position.x < 0) {
-            this.position.x = 0;
-            this.velocity.x = 0;
-        }
-        if (this.position.y + this.height > GameEnv.innerHeight) {
-            this.position.y = GameEnv.innerHeight - this.height;
-            this.velocity.y = 0;
-        }
-        if (this.position.y < 0) {
-            this.position.y = 0;
-            this.velocity.y = 0;
-        }
-
-        // Call the draw method to render the player
-        this.draw();
-    }
-
+    /**
+     * Checks if the player is colliding with a given area.
+     * 
+     * This method checks if the player is colliding with a given area.
+     * 
+     * @param {Object} area - The area to check for collision.
+     * @returns {boolean} - True if the player is colliding with the area, false otherwise.
+     */
     isCollidingWithArea(area) {
         return (
             this.position.x < area.position.x + area.width &&

@@ -71,14 +71,29 @@ class Npc extends Character {
     }
 
     flyOff() {
-        this.velocity.x = 5; // Adjust the speed as needed
-        const flyOffInterval = setInterval(() => {
-            this.position.x += this.velocity.x;
+        const move = () => {
+            this.position.x += 20; // Increase position increment for faster movement
+            console.log(`Current position: ${this.position.x}`); // Add logging for debugging
             if (this.position.x > GameEnv.innerWidth) {
-                clearInterval(flyOffInterval);
                 this.destroy(); // Remove the NPC from the game environment
+            } else {
+                requestAnimationFrame(move);
             }
-        }, 1000 / 60); // 60 FPS
+        };
+        requestAnimationFrame(move);
+    }
+
+    isCollidingWith(other) {
+        const margin = 20; // Increase this value to make the hitbox larger
+        const rect1 = this.canvas.getBoundingClientRect();
+        const rect2 = other.canvas.getBoundingClientRect();
+
+        return (
+            rect1.left - margin < rect2.right &&
+            rect1.right + margin > rect2.left &&
+            rect1.top - margin < rect2.bottom &&
+            rect1.bottom + margin > rect2.top
+        );
     }
 }
 

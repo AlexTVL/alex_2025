@@ -2,6 +2,7 @@ import GameEnv from './GameEnv.js';
 import Collectible from './Collectibles.js'; // Import the Collectible class
 import Npc from './Npc.js'; // Import the Npc class
 import Prompt from './Prompt.js'; // Import the Prompt module
+import Player from './Player.js'; // Import the Player class
 
 /**
  * Updates the display of collectibles remaining.
@@ -55,8 +56,11 @@ export function updateCollectiblesCollected() {
         triggerBirdNpcFlyOff();
         displayWaitText();
         setTimeout(() => {
-            initializeFaceNpc();
-        }, 5000); // Initialize "The Face" NPC after 5 seconds
+            initializeFaceNpc(); // Initialize "The Face" NPC after 5 seconds
+            setTimeout(() => {
+                gameOver(); // End the game 0.5 seconds after "The Face" NPC appears
+            }, 500);
+        }, 5000);
     }
 }
 
@@ -124,13 +128,16 @@ function initializeFaceNpc() {
         left: { start: 1, row: 0, columns: 3 },
         right: { start: 1, row: 0, columns: 3 },
         flyOff: function() {
-            const interval = setInterval(() => {
-                this.position.x += 50; // Increase position increment for faster movement
+            const move = () => {
+                this.position.x += 20; // Increase position increment for faster movement
+                console.log(`Current position: ${this.position.x}`); // Add logging for debugging
                 if (this.position.x > GameEnv.innerWidth) {
-                    clearInterval(interval);
                     this.destroy(); // Remove the NPC from the game environment
+                } else {
+                    requestAnimationFrame(move);
                 }
-            }, 1000 / 60);
+            };
+            requestAnimationFrame(move);
         }
     });
 
@@ -141,4 +148,14 @@ function initializeFaceNpc() {
 
     GameEnv.gameObjects.push(faceNpc);
     faceNpc.flyOff();
+}
+
+/**
+ * Handles game over state.
+ */
+function gameOver() {
+    alert('Game Over!');
+    // Stop the game loop or any other necessary cleanup
+    // For example, you can reload the page to restart the game
+    location.reload();
 }
