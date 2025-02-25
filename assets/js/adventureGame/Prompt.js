@@ -277,7 +277,7 @@ const Prompt = {
             document.body.appendChild(customPrompt);
         }
 
-        customPromptMessage.innerHTML = options.map((option, index) => `<p>${index + 1}. ${option}</p>`).join("");
+        customPromptMessage.innerHTML = options.map((option, index) => `<p style="color: #333;">${index + 1}. ${option}</p>`).join("");
         customPrompt.style.display = "block";
 
         customPromptSubmit.onclick = () => {
